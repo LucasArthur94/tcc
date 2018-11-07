@@ -1,0 +1,157 @@
+\chapter{Documento de Visão}\label{chap:vision-doc-appendix}
+
+\section{Introdução}
+\subsection{Finalidade e Visão Geral do Documento}
+
+O documento tem como finalidade coletar informações e unificar os pontos de vista sobre o sistema de gerenciamento da disciplina de TCC, como as necessidades encontradas e as causas para tais necessidades.
+
+\subsection{Referências}
+
+O site do departamento, bem como o Tidia-AE serviram como referência auxiliar para entender melhor as soluções atuais.
+
+\section{Posicionamento}
+\subsection{Descrição do Problema}
+
+\begin{table}[!htb]
+    \centering
+    \caption{Descrição básica do problema}
+    \label{tab:descricao-problema}
+    \resizebox{\textwidth}{!}{\begin{tabular}{|l|l|lll}
+        \cline{1-2}
+        O problema de         & alto tempo e esforço para gerenciar a disciplina de maneira manual    &  &  &  \\ \cline{1-2}
+        afeta                 & orientadores, alunos e coordenadores da disciplina            &  &  &  \\ \cline{1-2}
+        cujo impacto é        & demora e esforço para notas, dificuldade para integração entre envolvidos, problemas de demanda     &  &  &  \\ \cline{1-2}
+        uma boa solução seria & automatizar o processo e integrar os orientadores no processo &  &  &  \\ \cline{1-2}
+    \end{tabular}}
+\end{table}
+
+\subsection{Sentença de Posição do Produto}
+
+\begin{table}[!htb]
+    \centering
+    \caption{Sentença básica de posição do produto}
+    \label{sentenca-posicao}
+    \resizebox{\textwidth}{!}{\begin{tabular}{|l|l|lll}
+        \cline{1-2}
+        Para            & alunos, orientadores, coordenadores e técnicos                                                                  &  &  &  \\ \cline{1-2}
+        Que             & cursam ou estão envolvidos diretamente                                                            &  &  &  \\ \cline{1-2}
+        O sistema       & de gerenciamento dos TCC's                                                                                      &  &  &  \\ \cline{1-2}
+        Que             & armazena os TCC's anteriores e gerencia o TCC atual, realizando avaliação e controlando entregas                                                             &  &  &  \\ \cline{1-2}
+        Ao contrário do & processo semi-manual de gerenciamento da disciplina, do Tidia-AE e do Site institucional em Wordpress                                                             &  &  &  \\ \cline{1-2}
+        O sistema       & permite um acompanhamento dos envolvidos, bem como serve de histórico para os trabalhos anteriores &  &  &  \\ \cline{1-2}
+    \end{tabular}}
+\end{table}
+
+
+\section{Descrições dos Envolvidos e Usuários}
+\subsection{Resumo dos envolvidos}
+
+Há alguns usuários que não estão diretamente envolvidos com o sistema, mas podem ser beneficiados ou interferem no sistema a ser desenvolvido:
+
+\begin{itemize}
+    \item Infraestrutura: Irá aplicar restrições tecnológicas e de negócio dado o ambiente desenvolvido.
+    \item Secretaria do Departamento: Nem todos os integrantes irão usar o sistema, mas serão beneficiados pela automação de alguns processos internos da disciplina, diminuindo a demanda recorrente sobre a equipe, vide o fato deles gerenciarem as entregas das avaliações durante o processo.
+\end{itemize}
+
+\subsection{Resumo dos usuários}
+
+Há diversos usuários que serão diretamente beneficiados com o sistema. São eles:
+
+\begin{itemize}
+    \item Coordenador: Responsáveis por administrarem as disciplinas de TCC 1 e 2 para os cursos de Engenharia de Computação Semestrais e Quadrimestrais.
+    \item Orientador: Responsável por construír com os alunos a monografia.
+    \item Técnico de Operação: Responsável por administrar novas funcionalidades futuras do sistema.
+    \item Técnico do Evento: Responsável por cuidar da parte de infraestrutura dos eventos a serem realizados.
+    \item Alunos: Os cursantes das disciplinas de TCC 1 e 2.
+    \item Avaliador Teórico: Avaliam os projetos realizados, durante a banca de defesa.
+    \item Avaliador Prático: Avaliam os projetos realizados, durante a feira de projetos de formatura.
+\end{itemize}
+
+\subsection{Representantes dos usuários}
+
+Foram escolhidos representantes dos perfis citados acima, de maneira a facilitar conversas durante a especificação do documento.
+
+\begin{itemize}
+    \item João Batista/Paulo Cugnasca: Coordenadores das duas disciplinas.
+    \item Edson Gomi: Professor orientador
+    \item Selma: Avaliadora Teórica
+    \item Nilton: Técnico do Evento
+    \item Michelet: Técnico de Operação
+    \item Fábio Levy: Responsável pela infraestrutura de hospedagem.
+    \item Bruno Albertini: Responsável pela infraestrutura de hospedagem.
+    \item Ex-aluno: Processo do lado do aluno cursante da disciplina.
+\end{itemize}
+
+\subsection{Ambiente do usuário}
+
+Para o processo em questão, podemos reforçar alguns pontos importantes:
+
+\begin{itemize}
+    \item São 2 professores coordenadores, 2 técnicos, cerca de 50 alunos por ano de TCC e cerca de 20 professores orientadores do departamento de PCS.
+    \item O ciclo da disciplinas de TCC dura 1 ano, sendo metade do tempo de especificação e metade de implementação.
+    \item Atualmente, há a plataforma Tidia-AE existente para administrar as disciplinas. Porém, ela serve apenas como repositório de arquivos, sem a participação direta dos orientadores e sem infraestrutura de automação e comunicação rápida entre os envolvidos.
+    \item Além disso, há o site do departamento, onde ficam as monografias mais recentes, também como simples repositório de arquivos.
+\end{itemize}
+
+\subsection{Principais necessidades do usuário}
+
+Diversas necessidades foram encontradas, sendo agrupadas, estudadas e propostas soluções para atendê-las. A lista das necessidades encontradas está a seguir:
+
+\begin{table}[!htb]
+  \centering
+  \caption{Necessidades encontradas}
+  \label{necessidades-encontradas}
+  \resizebox{\textwidth}{!}{\begin{tabular}{|l|l|l|l|}
+    \hline
+    Necessidade                                                                         & Prior. & Sol.Atual         & Sol. Proposta                                                \\ \hline
+    Orientador, coordenadores e alunos têm dificuldades em manter contato              & 1      & E-mail, reuniões  & Colocar os orientadores nas entregas                         \\ \hline
+    Busca de monografias antigas é complexa.                                            & 2      & Site do PCS       & Criar repositório de monografias finalizadas                 \\ \hline
+    O processo de gerenciar empresas participantes é extremamente manual.               & 7      & Conversas         & Integrar empresas às monografias a serem avaliadas           \\ \hline
+    Avaliadores têm dificuldade em acessar monografias.                                 & 4      & E-mail            & Permitir monografia de fácil acesso no sistema               \\ \hline
+    Avaliação dos projetos é de maneira manual.                                         & 5      & Papel             & Permitir avaliação pelo sistema, inclusive de maneira mobile \\ \hline
+    Encontrar temas e alunos e propor temas é um processo manual.                       & 9      & E-mail, conversas & Permitir alunos e orientadores proporem temas no sistema     \\ \hline
+    O gerenciamento de recursos pela parte do técnico é depende dos alunos solicitarem. & 8      & E-mail, pen drive & Automatizar as demandas para os técnicos providenciarem      \\ \hline
+    O processo de montagem da banca de TCC é manual.                                    & 6      & E-mail, conversas & Permitir montagem de bancas pelo sistema                     \\ \hline
+    Fechar as notas finais é um processo exaustivo e com curto prazo.                   & 3      & Papel             & Automatizar o cálculo das notas finais                       \\ \hline
+  \end{tabular}}
+\end{table}
+
+\subsection{Alternativas e concorrência}
+\begin{itemize}
+    \item Tidia-AE: Entregas pontuais, com acesso apenas aos integrantes do grupo e aos coordenadores da disciplina. Os orientadores ficam de fora das entregas principais, cabendo aos alunos realizarem essa comunicação de maneira extra-oficial.
+    \item Moodle: Plataforma aberta conhecida no mercado para gerenciamento de disciplinas em geral. Serve para construir grupos e até incluir orientadores, porém não é uma alternativa simples e não possui funcionalidades de busca avançada.
+    \item Site PCS (Wordpress): Apenas resultado final, de maneira pública, sem integração dos envolvidos no projeto.
+\end{itemize}
+
+\section{Visão Geral do Produto}
+\subsection{Perspectiva do Produto}
+O produto tem como missão automatizar o processo já existente para a disciplina, pois muitas funcionalidades propostas são realizadas de maneira manual ou simplificada, o que demanda muito tempo e esforço dos coordenadores e orientadores, tornando o processo frágil. Além disso, depende da iniciativa de todos os envolvidos, pois todo o processo de comunicação orientador-aluno é feito de maneira isolada do processo coordenador-aluno e coordenador-orientador.
+
+\subsection{Suposições e Dependências}
+A principal dependência encontrada é que o serviço deve ser hospedado na infraestrutura interna da Universidade de São Paulo, o que afetará a maneira como o produto será desenvolvido.
+  
+\section{Recursos do Produto}
+O produto a ser desenvolvido deve atender as necessidades descritas anteriormente, ou seja, possíveis conteúdos interessantes são:
+
+\begin{itemize}
+    \item Facilitar comunicação orientador/coordenadores, permitindo que eles vejam todas as entregas dos alunos e validem, quando necessário.
+    \item Buscar, de maneira pública, as monografias antigas, usando filtros e busca textual.
+    \item Incluir avaliadores da feira no sistema para acompanhar monografias correntes.
+    \item Permitir avaliação tanto da banca como da feira (com as empresas), permitindo acesso prévio ao conteúdo e facilitando a avaliação (de preferência na plataforma mobile).
+    \item Permitir que orientadores, alunos e empresas proponham temas e consigam combinar grupos para realizar as propostas.
+    \item Permitir aos técnicos gerenciarem recursos necessários para as apresentações (imprimir apresentações sem necessidade do aluno entregar arquivos via pen drive, por exemplo)
+    \item Permitir a montagem de bancas de TCC, convidando os envolvidos e facilitando o acesso ao resultado final do aluno.
+\end{itemize}
+  
+\section{Outros requisitos do produto}
+Como principais requisitos não-funcionais importantes, vale ressaltar:
+
+\begin{itemize}
+    \item Confiabilidade: O sistema deve permanecer funcional durante as avaliações finais do curso, pois são cruciais para o bom andamento da matéria.
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    \item Segurança: Os acessos às monografias em andamento devem ser apenas aos envolvidos diretos do trabalho. Além disso, as empresas só podem acessar o resultado final não revisado, para fins de avaliação.
+    \item Usabilidade: O sistema deve ser bem intuitivo e de aprendizagem fácil, pelo tempo curto dos envolvidos na feira e pela mobilidade envolvida (avaliações pelo celular, por exemplo).
+    \item Usabilidade: O sistema deve ser bem intuitivo e de aprendizagem fácil, pelo tempo curto dos envolvidos na feira e pela mobilidade envolvida (avaliações pelo celular, por exemplo).
+\end{itemize}

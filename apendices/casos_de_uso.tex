@@ -1,0 +1,899 @@
+\chapter{Casos de Uso}\label{chap:use-case-appendix}
+
+\section{Introdução}
+
+Neste apêndice consta os casos de uso escritos para o sistema em questão, usando o padrão explicado no capítulo de casos de uso\cite{funpar2001}.
+
+\subsection{Cadastrar disciplinas}
+
+
+\begin{enumerate}
+    \item Breve Descrição
+
+
+Coordenadores cadastram a disciplina, os alunos participantes e as atividades.
+
+
+    \item Fluxo de Eventos
+
+\begin{enumerate}
+    \item Fluxo Básico
+
+\begin{itemize}
+    \item Coordenador insere disciplina, com os seguintes dados:
+
+\begin{itemize}
+    \item Modalidade (Sem/Quad)
+
+    \item Data de início e data de término
+
+
+\end{itemize}
+    \item Coordenador importa planilha com alunos participantes, com os seguintes dados dos alunos
+
+\begin{itemize}
+    \item Nome
+
+    \item E-mail
+
+    \item Nº USP
+
+
+\end{itemize}
+    \item Coordenador insere uma nova atividade da disciplina, com os seguintes dados
+
+\begin{itemize}
+    \item Nome
+
+    \item Data de entrega e arquivos relacionados
+
+    \item Peso da atividade
+
+
+\end{itemize}
+    \item Sistema salva alunos novos, dispara e-mail ao aluno com seu acesso (login e senha) e vincula os existentes à disciplina e salva a disciplina
+\end{itemize}
+
+    \item Fluxos Alternativos
+
+\begin{enumerate}
+    \item Data de início é posterior a de término
+
+\begin{enumerate}
+    \item Sistema exibe novamente tela de cadastro da disciplina, alertando sobre erro
+
+
+\end{enumerate}
+    \item E-mail é inválido
+
+\begin{enumerate}
+    \item Sistema exibe novamente tela de cadastro da disciplina, alertando sobre erro
+
+
+\end{enumerate}
+    \item E-mail retornou
+
+\begin{enumerate}
+    \item Sistema envia e-mail ao coordenador com o aluno problemático
+
+
+
+
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+    \item Requisitos Especiais
+
+
+Não há
+
+
+    \item Pré-condição
+
+
+Coordenador deve estar logado
+
+
+    \item Pós-condição
+
+    Não há
+\end{enumerate}
+
+\subsection{Editar disciplinas}
+
+
+\begin{enumerate}
+    \item Breve Descrição
+
+
+Coordenadores editam disciplinas, cadastrando atividades, editando alunos etc.
+
+
+    \item Fluxo de Eventos
+
+\begin{enumerate}
+    \item Fluxo Básico
+
+\begin{itemize}
+    \item Coordenador edita início e término da disciplina, alunos participantes, com novos alunos ou removendo os já participantes
+
+    \item Coordenador insere uma nova atividade da disciplina, com os seguintes dados
+
+\begin{itemize}
+    \item Nome
+
+    \item Data de entrega
+
+    \item Arquivos relacionados
+
+    \item Peso da atividade
+
+
+\end{itemize}
+    \item Sistema salva novas atividades e as mudanças da disciplina
+\end{itemize}
+
+    \item Fluxos Alternativos
+
+
+
+\end{enumerate}
+    \item Requisitos Especiais
+
+
+Não há
+
+
+    \item Pré-condição
+
+
+Coordenador deve estar logado
+
+
+    \item Pós-condição
+
+    Não há
+\end{enumerate}
+
+\subsection{Cadastrar professores}
+
+
+\begin{enumerate}
+    \item Breve Descrição
+
+
+Coordenadores cadastram professores do departamento que podem orientar/co-orientar.
+
+
+    \item Fluxo de Eventos
+
+\begin{enumerate}
+    \item Fluxo Básico
+
+\begin{itemize}
+    \item Coordenador insere os dados do professor
+
+\begin{itemize}
+    \item Nome 
+
+    \item Número USP
+
+    \item E-mail
+
+
+\end{itemize}
+    \item Sistema salva o professor, disparando e-mail para o professor cadastrado
+\end{itemize}
+
+
+    \item Fluxos Alternativos
+
+
+
+\end{enumerate}
+    \item Requisitos Especiais
+
+
+Não há
+
+
+    \item Pré-condição
+
+
+Coordenador deve estar logado
+
+
+    \item Pós-condição
+
+    Não há
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Cadastrar grupos de trabalhos}
+
+
+\begin{enumerate}
+    \item Breve Descrição
+
+
+Coordenadores cadastram os grupos com os temas e os orientadores, com a confirmação da participação do orientador no grupo.
+
+
+    \item Fluxo de Eventos
+
+\begin{enumerate}
+    \item Fluxo Básico
+
+\begin{itemize}
+    \item Coordenador insere os dados do grupo
+
+\begin{itemize}
+    \item Título
+
+    \item Alunos
+
+    \item Orientador
+
+    \item Co-orientador
+
+
+\end{itemize}
+    \item Sistema salva grupo e envia e-mail para o orientador, co-orientador e alunos
+
+    \item Orientador valida participação no grupo
+
+    \item Co-orientador valida participação no grupo
+\end{itemize}
+
+
+    \item Fluxos Alternativos
+
+\begin{enumerate}
+    \item Grupo não tem orientador
+
+\begin{enumerate}
+    \item Sistema cadastra grupo, enviando e-mail para os alunos com o aviso de urgência na escolha do orientador
+
+
+\end{enumerate}
+    \item Grupo não tem aluno
+
+\begin{enumerate}
+    \item Sistema retorna para a tela de cadastro de grupo, avisando sobre o erro de ausência de alunos
+\end{enumerate}
+\end{enumerate}
+
+
+    \item Requisitos Especiais
+
+
+Não há
+
+
+    \item Pré-condição
+
+
+Coordenador deve estar logado, alunos, orientadores e co-orientadores cadastrados
+
+
+    \item Pós-condição
+
+    Grupo confirmado
+\end{enumerate}
+\end{enumerate}
+
+\subsection{Login}
+
+
+\begin{enumerate}
+    \item Breve Descrição
+
+
+Alunos, Orientadores, Co-orientadores e Coordenadores acessam sistema de maneira tradicional ou via Senha Única USP (para pertencentes à USP).
+
+
+    \item Fluxo de Eventos
+
+\begin{enumerate}
+    \item Fluxo Básico
+
+\begin{itemize}
+    \item Sistema mostra campos de login e senha
+
+    \item Usuário insere seu e-mail e sua senha
+
+    \item Sistema valida e-mail e senha
+
+    \item Usuário acessa sistema
+\end{itemize}
+
+
+    \item Fluxos Alternativos
+
+\begin{enumerate}
+    \item Usuário erra credenciais
+
+\begin{enumerate}
+    \item Sistema retorna para tela de acesso ao sistema, exibindo mensagem de erro
+
+    \item Retorna normalmente à situação de mostrar campos de login e senha
+
+
+\end{enumerate}
+    \item Usuário realiza login pela Senha Única da USP
+
+\begin{enumerate}
+    \item Usuário seleciona $``$Acessar pela Senha Única USP$"$ 
+
+    \item Usuário é redirecionado para os sistemas USP
+
+    \item Retorna para a situação de acesso ao sistema
+\end{enumerate}
+\end{enumerate}
+
+
+    \item Requisitos Especiais
+
+
+Integração via Shibboleth com os Sistemas USP
+
+
+    \item Pré-condição
+
+
+Não há
+
+
+    \item Pós-condição
+
+    Usuário dentro do sistema
+\end{enumerate}
+\end{enumerate}
+
+
+\subsection{Entregar atividade}
+
+
+\begin{enumerate}
+    \item Breve Descrição
+
+
+Alunos submetem no Google Drive arquivos da atividade para a leitura do orientador, co-orientador e coordenadores. Orientador e co-orientador revisam e dão seu aval de aprovação com a documentação.
+
+
+    \item Fluxo de Eventos
+
+\begin{enumerate}
+    \item Fluxo Básico
+
+\begin{itemize}
+    \item Aluno submete arquivos nos respectivos espaços de atividades, que são carregados no Google Drive e deixa comentários adicionais sobre a entrega
+
+    \item Sistema salva a entrega com o status da entrega da atividade para $``$Não avaliada$"$ 
+
+    \item Sistema envia e-mail para Orientador e Co-orientador avisando de submissão
+
+    \item Orientador baixa documentos submetidos
+
+    \item Orientador avalia a entrega, faz comentários aos alunos e comentários exclusivos à coordenação com notas
+
+    \item Sistema salva entrega e dispara e-mail com o resultado da avaliação para os alunos
+\end{itemize}
+
+
+    \item Fluxos Alternativos
+
+\begin{enumerate}
+    \item Data de submissão expirou (1)
+
+\begin{enumerate}
+    \item Aluno não consegue interagir com atividade, encerrando fluxo
+
+
+\end{enumerate}
+    \item Co-orientador realiza fluxo de revisão, antes do Orientador (4)
+
+\begin{enumerate}
+    \item Passos 5 - 7 ocorrem normalmente, trocando Orientador por Co-orientador
+
+
+\end{enumerate}
+    \item Co-orientador realiza fluxo de revisão, após Orientador (8)
+
+\begin{enumerate}
+    \item Sistema exibe detalhes da entrega, porém não permite edições do lado do Co-orientador, encerrando fluxo
+
+
+\end{enumerate}
+    \item Aluno submete nova entrega da atividade após ter feito uma submissão (1)
+
+\begin{enumerate}
+    \item Aluno vê status da avaliação
+
+    \item Aluno realiza nova entrega da atividade, repetindo o caso de uso
+
+
+\end{enumerate}
+    \item Aluno submete entrega da atividade quando alguém do grupo já submeteu (1)
+
+\begin{enumerate}
+    \item Sistema exibe detalhes da entrega já realizada
+
+    \item Aluno pode realizar nova entrega da atividade, passando por cima da entrega anterior e repetindo o caso de uso
+\end{enumerate}
+\end{enumerate}
+
+    \item Requisitos Especiais
+
+
+Não há
+
+
+    \item Pré-condição
+
+
+Atores devem estar autenticados e atividade deve estar cadastrada no sistema
+
+
+    \item Pós-condição
+    
+    Não há
+\end{enumerate}
+\end{enumerate}
+
+
+\subsection{Construir bancas práticas}
+
+
+\begin{enumerate}
+    \item Breve Descrição
+
+
+Coordenadores selecionam os participantes da banca prática, já cadastrados no sistema, e os notifica com comentários sobre o evento.
+
+
+    \item Fluxo de Eventos
+
+\begin{enumerate}
+    \item Fluxo Básico
+
+\begin{itemize}
+    \item Coordenador informa o dia da feira, a disciplina correspondente e as salas disponíveis para o evento, além de determinar o peso da avaliação da banca
+
+    \item Sistema salva evento
+
+    \item Coordenador seleciona evento recém criado.
+
+    \item Sistema lista grupos do evento.
+
+    \item Coordenador seleciona o grupo que deseja atribuir a sala e os convidados.
+
+    \item Coordenador seleciona os convidados que avaliarão o grupo
+
+    \item Sistema salva banca e envia e-mail para os convidados externos, avisando-os sobre sua participação
+
+    \item Convidado acessa sistema e confirma participação na banca
+\end{itemize}
+
+    \item Fluxos Alternativos
+
+Não há
+
+\end{enumerate}
+    \item Requisitos Especiais
+
+
+Não há
+
+
+    \item Pré-condição
+
+
+Atores devem estar autenticados e grupo de trabalho deve estar cadastrado no sistema
+
+
+    \item Pós-condição
+
+    Não há
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Construir bancas teóricas}
+
+
+\begin{enumerate}
+    \item Breve Descrição
+
+
+Coordenadores escolhem participantes da banca teórica do grupo, selecionam o presidente da banca, realizam o agendamento do horário, validando inconsistências (participante já possui horário ocupado) e notificam os participantes por e-mail.
+
+
+    \item Fluxo de Eventos
+
+\begin{enumerate}
+    \item Fluxo Básico
+
+\begin{itemize}
+    \item Coordenador informa o dia da banca, a disciplina correspondente e as salas disponíveis para o evento
+
+    \item Sistema salva evento
+
+    \item Coordenador seleciona evento recém criado.
+
+    \item Sistema lista grupos do evento.
+
+    \item Coordenador seleciona o grupo que deseja atribuir a sala e os convidados.
+
+    \item Coordenador seleciona os avaliadores da banca e o horário da avaliação. O orientador é um dos pré-selecionados por padrão
+\end{itemize}
+
+    \item Fluxos Alternativos
+
+\begin{enumerate}
+    \item Convidado externo já possui banca nesse dia e horário
+
+\begin{enumerate}
+    \item Sistema barra criação de banca, alertando sobre qual convidado já possui agenda ocupada
+
+
+\end{enumerate}
+    \item Sala está ocupada no horário selecionado
+
+\begin{enumerate}
+    \item Sistema barra criação de banca, alertando sobre qual sala já possui agenda ocupada
+\end{enumerate}
+\end{enumerate}
+
+ \item Requisitos Especiais
+
+
+Não há
+
+
+    \item Pré-condição
+
+
+Atores devem estar autenticados e grupo de trabalho deve estar cadastrado no sistema
+
+
+    \item Pós-condição
+
+    Não há
+\end{enumerate}
+\end{enumerate}
+
+
+\subsection{Listar entregas}
+
+
+\begin{enumerate}
+    \item Breve Descrição
+
+
+Técnicos recebem os arquivos de impressão, com normalização do título, separados por grupo.
+
+
+    \item Fluxo de Eventos
+
+\begin{enumerate}
+    \item Fluxo Básico
+
+\begin{itemize}
+    \item Coordenador lista todas as entregas finais de impressão (\textit{banner} e \textit{press-release})
+
+    \item Sistema salva as listas de arquivos finais, com o nome normalizado e envia por e-mail para o técnico responsável
+\end{itemize}
+
+    \item Fluxos Alternativos
+
+\begin{enumerate}
+    \item Grupo de trabalho está com arquivo faltante
+
+\begin{enumerate}
+    \item Sistema envia e-mail para o grupo com entrega faltante, avisando para regularizar a situação com urgência.
+\end{enumerate}
+\end{enumerate}
+
+    \item Requisitos Especiais
+
+
+Não há
+
+
+    \item Pré-condição
+
+
+Atores devem estar autenticados e grupo de trabalho deve estar cadastrado no sistema
+
+
+    \item Pós-condição
+
+    Não há
+\end{enumerate}
+\end{enumerate}
+
+\subsection{Listar necessidades adicionais}
+
+
+\begin{enumerate}
+    \item Breve Descrição
+
+
+Técnicos recebem necessidades adicionais revisadas pelos orientadores, separadas por grupo.
+
+
+    \item Fluxo de Eventos
+
+\begin{enumerate}
+    \item Fluxo Básico
+
+\begin{itemize}
+    \item Coordenador lista todos os comentários das entregas finais
+
+    \item Sistema salva a lista de comentários e a envia por e-mail para o técnico responsável
+\end{itemize}
+
+    \item Fluxos Alternativos
+
+
+
+\end{enumerate}
+    \item Requisitos Especiais
+
+
+Não há
+
+
+    \item Pré-condição
+
+
+Atores devem estar autenticados e grupo de trabalho deve estar cadastrado no sistema
+
+
+    \item Pós-condição
+
+    Não há
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Avaliar projetos práticos}
+
+
+\begin{enumerate}
+    \item Breve Descrição
+
+
+Participantes da banca prática avaliam os projetos que estão envolvidos, limitando avaliações até o final do dia.
+
+
+    \item Fluxo de Eventos
+
+\begin{enumerate}
+    \item Fluxo Básico
+
+\begin{itemize}
+    \item Convidado externo acessa espaço da banca, com detalhes do grupo e as entregas finais
+
+    \item Convidado preenche os comentários e as notas de acordo com cada critério estabelecido para avaliação de bancas práticas
+
+    \item Convidado salva avaliação
+\end{itemize}
+
+    \item Fluxos Alternativos
+
+\begin{enumerate}
+    \item Convidado tenta submeter avaliação em dia diferente ao da banca prática
+
+\begin{enumerate}
+    \item Avaliação é barrada, avisando o convidado de que a avaliação só pode ser feita exclusivamente no dia
+
+
+
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+    \item Requisitos Especiais
+
+
+Não há
+
+
+    \item Pré-condição
+
+
+Atores devem estar autenticados e grupo de trabalho deve estar cadastrado no sistema
+
+
+    \item Pós-condição
+
+    Não há
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Avaliar monografias teóricas}
+
+
+\begin{enumerate}
+    \item Breve Descrição
+
+
+Participantes da banca teórica avaliam as monografias que estão envolvidas, gerando comentários e definindo o status do trabalho (aprovado, aprovado com correções, recuperação e reprovado), limitando avaliações até o final do dia.
+
+
+    \item Fluxo de Eventos
+
+\begin{enumerate}
+    \item Fluxo Básico
+
+\begin{itemize}
+    \item Participante da banca acessa espaço da banca, com detalhes do grupo e as entregas parciais e finais.
+
+    \item Participante preenche os comentários e as notas de acordo com cada critério estabelecido para avaliação de bancas teóricas
+
+    \item Participante salva avaliação, com seu parecer para aprovação da monografia
+
+    \item Presidente da banca vê avaliações dos outros envolvidos e determina o parecer final para a banca, com comentários para o grupo
+\end{itemize}
+
+    \item Fluxos Alternativos
+
+Não há
+
+
+
+\end{enumerate}
+    \item Requisitos Especiais
+
+
+Não há
+
+
+    \item Pré-condição
+
+
+Atores devem estar autenticados e grupo de trabalho deve estar cadastrado no sistema
+
+
+    \item Pós-condição
+
+    Não há
+\end{enumerate}
+
+
+\subsection{Calcular nota final dos projetos}
+
+
+\begin{enumerate}
+    \item Breve Descrição
+
+
+Coordenadores determinam a fórmula para calcular as notas finais, com base nas entregas parciais durante as duas disciplinas e o sistema calcula as notas finais de todos os grupos participantes.
+
+
+    \item Fluxo de Eventos
+
+\begin{enumerate}
+    \item Fluxo Básico
+
+\begin{itemize}
+    \item Coordenador escolhe as duas disciplinas (TCC1 e TCC2), a banca teórica e a feira prática que deseja obter as entregas
+
+    \item Sistema salva fórmula de avaliação
+
+    \item Sistema lista todos os grupos, com as notas calculadas e os estados de avaliação de cada grupo
+\end{itemize}
+
+    \item Fluxos Alternativos
+
+\begin{enumerate}
+    \item Coordenador não preenche algum dos campos necessários
+
+\begin{enumerate}
+    \item Sistema barra criação de fórmula de avaliação, avisando os campos faltantes
+
+
+\end{enumerate}
+    \item Grupo tem alguma avaliação faltante
+
+\begin{enumerate}
+    \item Sistema exibe grupo, mas com campo de Não Avaliado
+
+
+\end{enumerate}
+    \item Grupo vai para recuperação na avaliação da banca teórica
+
+\begin{enumerate}
+    \item A nota calculada é a nota da banca teórica, passando todas as outras avaliações realizadas ao longo das disciplinas
+
+
+\end{enumerate}
+    \item Grupo é reprovado na avaliação da banca teórica
+
+\begin{enumerate}
+    \item A nota calculada é a nota da banca teórica, passando todas as outras avaliações realizadas ao longo das disciplinas
+
+Não há
+
+
+
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+    \item Requisitos Especiais
+
+
+Não há
+
+
+    \item Pré-condição
+
+
+Atores devem estar autenticados e grupo de trabalho deve estar cadastrado no sistema
+
+
+    \item Pós-condição
+
+    Não há
+\end{enumerate}
