@@ -1,8 +1,8 @@
 \chapter{Aspectos Conceituais}
-Neste capítulo, serão abordados os principais conceitos relacionados à parte teórica do trabalho. Em especial, serão tratadas técnicas para compreender melhor os requisitos essenciais de um sistema a ser desenvolvido, essenciais para o projeto, tanto na fase inicial, como no desenvolvimento.
+Neste capítulo, serão abordados os principais conceitos relacionados à parte teórica do trabalho, que relacionam as mais diversas etapas de concepção de um sistema, como a representação dos requisitos envolvidos, a engenharia por detrás desses requisitos e a conformidade do que está sendo desenvolvido, por meio da verificação e validação.
 
 \section{Representação de Requisitos}
-Ao se desenvolver um sistema, existem diversas técnicas que podem ser usadas para representar os requisitos de diferentes formas. Para este trabalho, duas técnicas foram consideradas: Histórias de Usuário e Casos de Uso.
+Ao se desenvolver um sistema, existem diversas técnicas que podem ser usadas para representar os requisitos. Para este trabalho, duas técnicas foram consideradas: Histórias de Usuário e Casos de Uso.
 
 \subsection{Histórias de Usuário}
 Uma das abordagens possíveis para se representar os requisitos é o uso de História de Usuário (ou \textit{User Story}):\cite{jonathanrasmusson}:
@@ -16,7 +16,7 @@ O essencial em escrever boas histórias de usuário está em agregar valor para 
 
 Em contrapartida, histórias sobre o comportamento do sistema com valor de produto nelas são histórias de usuário importantes para o processo de desenvolvimento. Muitas vezes, porém, histórias de usuário forçam um viés altamente técnico; nessas situações, cabe buscar a causa raiz que levou à "solução" escrita na história: histórias de usuário apresentam problemas de negócio, e não soluções técnicas.
 
-Um bom padrão para escrever histórias de usuário está a seguir\cite{jonathanrasmusson}:
+Um padrão para escrever histórias de usuário\cite{jonathanrasmusson}:
 
 \begin{citacaoLonga}
 Eu como $<$para quem é a história$>$
@@ -26,26 +26,19 @@ Eu quero $<$o que ele quer$>$
 por causa $<$por que ele quer$>$
 \end{citacaoLonga}
 
-A vantagem de escrever histórias segundo esse modelo é que, naturalmente, elas atendem as características que definem Histórias de Usuário:
+A vantagem de escrever histórias segundo esse modelo é que, naturalmente, elas atendem as características que definem Histórias de Usuário\cite{jonathanrasmusson}:
 
 \begin{itemize}
-    \item Independentes: fundamental para mudanças no projeto (que ocorrem com frequência).
+    \item Independentes: elas podem ser implementadas de maneira isolada e distribuída entre a equipe, permitindo maior facilidade para mudanças no projeto (que ocorrem com frequência).
     \item Negociáveis: podem sofrer alterações e inclusive serem removidas se, com o andamento do projeto, ela perder sua prioridade e tais alterações e remoções não devem afetar o andar geral das outras tarefas.
-    \item Testáveis: no fluxo de negócio e na escrita de testes automatizados, assim garantimos com facilidade a qualidade do que está sendo entregue
-    \item Pequenas e Estimáveis: o esforço dela pode ser previsto com antecedência, permitindo assim medidas de performance dos envolvidos.
+    \item Testáveis: cada história pode ser verificada testando o fluxo de negócio e com a escrita de testes automatizados, assim garantimos com facilidade a qualidade do que está sendo entregue
+    \item Pequenas e Estimáveis: o esforço dela pode ser previsto com antecedência, permitindo assim acompanhar o andamento do projeto.
 \end{itemize}
 
 \subsection{Casos de Uso}
-Outra alternativa para documentar o que será desenvolvido no sistema são os casos de uso. Essencialmente, cada caso de uso possui um ou mais atores interagindo com o sistema. Segundo \cite{kurtbittnerianspence2002}:
+Outra alternativa para documentar o que será desenvolvido no sistema são os casos de uso. Essencialmente, cada caso de uso possui um ou mais atores interagindo com o sistema. Segundo \cite[cap. ~1, p. ~20]{kurtbittnerianspence2002}: "Os \textbf{atores} representam as pessoas ou coisas que interagem de alguma forma com o sistema. Já os \textbf{casos de uso} representam as coisas de valor que o sistema executa para os atores.
 
-\begin{citacaoLonga}
-\textbf{Atores} representam as pessoas ou coisas que interagem de alguma forma com o sistema.
-\\
-\\
-\textbf{Casos de Uso} representam as coisas de valor que o sistema executa para os atores.
-\end{citacaoLonga}
-
-\subsubsection{Uma estrutura de caso de uso\cite{ibm2011}}
+Para escrever casos de uso, há diversas estruturas prontas disponíveis na literatura. Uma estrutura de caso de uso de exemplo, usada no projeto\cite{ibm2011}:
 
 \begin{enumerate}
     \item Nome: nome do Caso de Uso
@@ -54,10 +47,10 @@ Outra alternativa para documentar o que será desenvolvido no sistema são os ca
     \end{enumerate}
     \item Fluxo de Eventos: a descrição dos eventos que ocorrem no sistema, que são divididos em dois conjuntos principais.
     \begin{enumerate}
-        \item Fluxo Básico: é o comportamento básico da interação entre os atores e o sistema. Não ha situações de contorno nem exceções, itens dos fluxos alternativos.
-        \item Fluxos Alternativos: comportamentos diferenciados do caso de uso, podendo haver mais de um.
+        \item Fluxo Básico: é o comportamento básico da interação entre os atores e o sistema. Não há situações de contorno nem exceções, que serão listadas nos fluxos alternativos.
+        \item Fluxos Alternativos: outros comportamentos menos usuais do caso de uso vêm aqui.
     \end{enumerate}
-    \item Requisitos Especiais: requisito não funcional que não está contemplado no fluxo de eventos.
+    \item Requisitos Especiais: requisito, não funcional, que não é contemplado no fluxo de eventos.
     \item Pré-condição: estado do sistema antes da realização do caso de uso.
     \item Pós-condição: estado do sistema após a execução.
 \end{enumerate}
@@ -65,7 +58,7 @@ Outra alternativa para documentar o que será desenvolvido no sistema são os ca
 Resumindo, o caso de uso é uma descrição comportamental da funcionalidade descrita, servindo de contrato estabelecido de desenvolvimento do sistema.
 
 \section{Requisitos}
-Os requisitos são responsáveis por o funcionamento do software a ser desenvolvido, alinhando as expectativas dos interessados com o futuro projeto. Para encontrar esses requisitos, existe um processo definido básico, definido em \cite{kurtbittnerianspence2002}:
+Os requisitos são responsáveis pelo funcionamento do software a ser desenvolvido, alinhando as expectativas dos interessados com o futuro projeto. Para encontrar esses requisitos, existe um  exemplo de processo definido básico, definido em \cite{kurtbittnerianspence2002}:
 
 \begin{itemize}
     \item Definição dos \textit{stakeholders}: Encontrar todos que são afetados pelo sistema.
@@ -74,12 +67,7 @@ Os requisitos são responsáveis por o funcionamento do software a ser desenvolv
 \end{itemize}
 
 \subsection{\textit{Stakeholders}}
-Inicialmente, para melhor entender quem será afetado com a existência dele. foram levantados os \textit{stakeholders}. Segundo \cite{kurtbittnerianspence2002}, a definição traduzida de \textit{stakeholder} é a seguinte:
-
-\begin{citacaoLonga}
-"Um indivíduo que é materialmente afetado pelo resultado do
-sistema ou o(s) projeto(s) que produzem o sistema."
-\end{citacaoLonga}
+Inicialmente, para melhor entender quem será afetado com a existência de um sistema, é necessário encontrar quem são essas pessoas ou grupos. Para isso, existe o conceito de \textit{stakeholders}. Segundo \cite[cap. ~3, p. ~88]{kurtbittnerianspence2002}, a definição traduzida de \textit{stakeholder}: "Um indivíduo que é materialmente afetado pelo resultado do sistema ou o(s) projeto(s) que produzem o sistema."
 
 Ou seja, \textit{stakeholders} não são apenas os indivíduos que efetivamente usarão o sistema, mas sim todos os impactados com sua existência. Eles são divididos em 5 grupos:
 
@@ -91,24 +79,26 @@ Ou seja, \textit{stakeholders} não são apenas os indivíduos que efetivamente 
     \item Consumidores: empresas que compram esses softwares para serem usados.
 \end{itemize}
 
-Uma vez mapeado os \textit{stakeholders}, devemos entender as dores que cada um possui e o que eles esperam com o produto final a ser desenvolvido. Alguns processos são sugeridos pelo livro\cite{kurtbittnerianspence2002}, como por exemplo:
+\subsection{Entendimento dos Problemas}
+
+Uma vez mapeado os \textit{stakeholders}, cabe entender as dores que cada um possui e o que eles esperam com o produto final a ser desenvolvido. Alguns processos sugeridos\cite{kurtbittnerianspence2002}:
 
 \begin{itemize}
     \item Entrevistas: entrevistar os \textit{stakeholders} e entender diretamente quais são suas dores e expectativas.
     \item Questionários: sequência de perguntas feitas à todos os \textit{stakeholders} para compreender o que cada um pensa sobre o sistema. São úteis quando há um amplo número de \textit{stakeholders} envolvidos.
     \item Grupo Focal: reunião com alguns representantes dos grupos de \textit{stakeholders} para entender e construir uma visão única sobre o projeto.
-    \item Quadros de Aviso: um tipo particular de grupo focal, onde o quadro serve como unificador da visão, com a diferença de não ter todos reunidos ao mesmo tempo.
+    \item Quadros de Aviso: um tipo particular de grupo focal, com o quadro servindo como unificador da visão, com a diferença de não ter todos reunidos ao mesmo tempo.
     \item \textit{Workshops}: eventos avisados com antecedência para entender melhor sobre o sistema, com a participação dos envolvidos, focando na colaboração entre eles.
     \item Revisões: reuniões informais com o intuito de revisar documentos gerados com alguns envolvidos.
     \item Encenação: uma técnica facilitadora usada em conjunto com \textit{workshops} para obter informações mais específicas ou \textit{feedbacks}.
 \end{itemize}
 
-Com essa listagem de problemas levantados pelos processos de levantamento de requisitos, finalmente partirmos para a visão unificada do processo como um todo e como o software vai atuar no processo. Para isso, é saudável a elaboração de um documento unificando os pontos de vista dos \textit{stakeholders} e estabelecendo o que de fato será o sistema a ser desenvolvido, resultando no Documento Visão.
+Com essa listagem de problemas levantados, o próximo passo é construir a visão unificada do processo como um todo, evidenciando como o software vai atuar no processo. Para isso, há a elaboração de um documento unificando os pontos de vista dos \textit{stakeholders} e estabelecendo o que de fato será o sistema a ser desenvolvido, resultando no Documento Visão.
 
 \subsection{Documento Visão}
-O Documento Visão é o responsável por unificar as visões de todos os \textit{stakeholders} sobre o sistema, centralizando todas as expectativas e definindo o escopo macro do projeto. Nele também deve constar as justificativas necessárias para a construção do sistema, explicitando possíveis concorrentes e os diferenciais do produto a ser desenvolvido.
+O Documento Visão é o responsável por unificar as visões de todos os \textit{stakeholders} do sistema, centralizando todas as expectativas e definindo o escopo macro do projeto. Nele também deve constar as justificativas necessárias para a construção do sistema, explicitando possíveis concorrentes e os diferenciais do produto a ser desenvolvido.
 
-Existem diversos modelos de Documento Visão, porém, em sua essência, atendem os seguintes tópicos\cite{kurtbittnerianspence2002}:
+Existem diversos modelos de Documento Visão. Um modelo de referência\cite[cap. ~3, p. ~135-136]{kurtbittnerianspence2002}:
 
 \begin{enumerate}
     \item Posicionamento: Como o sistema irá se posicionar no quesito de negócios? Há concorrentes que já resolvem o problema? Quais são seus diferenciais em relação a eles?
@@ -119,24 +109,20 @@ Existem diversos modelos de Documento Visão, porém, em sua essência, atendem 
     \item Outros requisitos do produto: Quais são os outros requisitos do sistema que não foram capturados como funcionalidades?
 \end{enumerate}
 
-Há duas formas de construção do Documento Visão, de acordo com as necessidades do projeto\cite{elisayuminakagawa2013}:
-\begin{itemize}
-    \item Após os processos de entendimento dos problemas: nesta situação, a sequência natural é a escrita dos Casos de Uso do sistema, de forma a documentar o que e como será entre cada funcionalidade.
-    \item Após os Casos de Uso: já neste caso, o Documento Visão é gerado após à escrita dos Casos de Uso.
-\end{itemize}
-
-Segundo \cite{kurtbittnerianspence2002}, o fluxo adotado é o de construção dos Casos de Uso só após a elaboração do Documento Visão.
-
 \section{Verificação e Validação}
-Durante o desenvolvimento, devemos garantir a qualidade do que está sendo entregue. Para isso, existem os processos de verificação e validação, traduzidos do SWEBOK\cite[cap.~10, p.~6]{ieeecomputersociety2014}: "O objetivo da verificação e validação é ajudar a equipe de desenvolvimento a garantir qualidade no sistema por todo seu ciclo de vida."
+Durante o desenvolvimento, faz parte do processo garantir a qualidade do que está sendo entregue. Para isso, existem os processos de verificação e validação (SWEBOK)\cite[cap.~10, p.~6]{ieeecomputersociety2014}: "Ajudar a equipe de desenvolvimento a garantir qualidade no sistema por todo seu ciclo de vida."
 
 Ao se desenvolver um software, é uma boa prática acompanhar se os requisitos funcionais e não funcionais estão sendo atendidos, de preferência com acompanhamento das métricas determinadas nos requisitos. Essa prática é conhecida como verificação, definida de maneira resumida pela seguinte pergunta\cite[cap. ~10, p. ~6]{ieeecomputersociety2014}: "Estamos construindo o produto corretamente?"
 
 Além de acompanhar os requisitos propostos, é importante entender se o sistema está de acordo com as expectativas operacionais dos \textit{stakeholders}. Essa análise constante de adequação voltada aos negócios é conhecida como validação, definida pela seguinte questão\cite[cap. ~10, p. ~6]{ieeecomputersociety2014}: "Estamos construindo o produto correto?"
 
 \subsection{Testes}
-Em ambos os casos descritos acima, precisamos de técnicas para detectar erros e manter a consistência do que já foi entregue. Para isso, existe o conceito de testes, onde se buscam no sistema erros e falhas, para que possam ser corrigidas e assim garantir a qualidade e alinhamento do que foi entregue. Vale lembrar que essa bateria de testes é finita, sendo um subgrupo dos infinitos fluxos de execução do domínio\cite{ieeecomputersociety2014}.
+Em ambos os casos descritos acima, precisamos de técnicas para detectar erros e manter a consistência do que já foi entregue. Para isso, existe o conceito de testes\cite[cap. ~4, p. ~1]{ieeecomputersociety2014}:
 
-Na escala macroscópica, temos os testes de aceitação junto aos \textit{stakeholders}, para validar a conformidade dos requisitos e a qualidade das entregas. Já para testar a arquitetura, costumam ser realizados testes de sistema. Para testar os componentes desenvolvidos do sistema, realizam-se testes de integração entre esses componentes. E, por fim, o código escrito para cada componente elaborado é testado pelos testes de unidade.
+\begin{citacaoLonga}
+Consiste na verificação dinâmica de que um programa fornece comportamentos esperados em um conjunto finito de casos de teste, selecionados adequadamente a partir do domínio de execução, geralmente infinito.
+\end{citacaoLonga}
 
-Ao desenvolver um sistema, uma boa prática é executar a suíte de testes construída a cada nova funcionalidade adicionada e/ou modificada, pois só assim é possível garantir a qualidade do que já foi entregue, detectando erros causados por essas modificações. Para auxiliar nessa boa prática, em especial para os testes menores, é automatizar a execução deles, o que economiza tempo de uma pessoa dedicada à função de testador.
+Na escala macroscópica, há os testes de aceitação junto aos \textit{stakeholders}, para validar as entregas. Já para testar a arquitetura, costumam ser realizados testes de sistema. Para testar os componentes desenvolvidos do sistema, realizam-se testes de integração entre esses componentes. E, por fim, o código escrito para cada componente elaborado é testado pelos testes de unidade.
+
+Ao desenvolver um sistema, uma boa prática é executar a suíte de testes construída a cada nova funcionalidade adicionada e/ou modificada, pois assim é possível manter a qualidade do que já foi entregue, detectando erros causados por essas modificações. Para auxiliar nessa boa prática, em especial para os testes de menor complexidade, uma solução é automatizar a execução deles, o que economiza tempo de uma pessoa dedicada à função de testador.

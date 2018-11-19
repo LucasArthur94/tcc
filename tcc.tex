@@ -14,18 +14,45 @@
 % times - Tenta usar a fonte Times New Roman para o corpo do texto
 % noindentfirst - Não indenta o primeiro parágrafo dos capítulos/seções
 
-
 % ========== Packages ==========
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amsthm,amsfonts,amssymb}
 \usepackage{float}
-\usepackage{graphicx,hyperref,cite,enumerate}
+\usepackage{graphicx,hyperref,cite,enumerate,listings,color}
 
+% ========== Lstlisting ==========
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{custom}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=custom}
+
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Lista de \lstlistingname s}
 
 % ========== Language options ==========
 \usepackage[brazil]{babel}
 %\usepackage[english]{babel}
-
 
 % ========== ABNT (requer ABNTeX 2) ==========
 %	http://www.ctan.org/tex-archive/macros/latex/contrib/abntex2
@@ -33,7 +60,6 @@
 
 % Forçar o abntex2 a usar [ ] nas referências ao invés de ( )
 %\citebrackets{[}{]}
-
 
 % ========== Lorem ipsum ==========
 \usepackage{blindtext}
@@ -73,9 +99,6 @@
 
 % Ano
 \data{2018}
-
-
-
 
 \begin{document}
 % ========== Capa e folhas de rosto ==========
@@ -143,11 +166,7 @@ Abstract...
 \listadetabelas
 
 % ========== Listas definidas pelo usuário (opcional) ==========
-% \begin{pretextualsection}{Lista de símbolos}
-
-% Lista de símbolos...
-
-% \end{pretextualsection}
+\lstlistoflistings
 
 % ========== Sumário ==========
 \sumario

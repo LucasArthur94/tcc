@@ -1,5 +1,59 @@
 \chapter{Especificação de Requisitos do Sistema}
+Neste capítulo, será abordado um pouco melhor sobre os requisitos do sistema encontrados, os pontos levantados nas diversas reuniões e os requisitos funcionais e não funcionais encontrados. Vale lembrar que, no apêndice \href{chap:vision-doc-appendix}, há maiores detalhes sobre o resultado geral do processo de levantamento de requisitos.
 
 \section{Pontos Levantados nas Reuniões}
+Esta seção aborda os diversos pontos levantados nas reuniões, as funcionalidades gerais encontradas e como elas formaram os casos de uso do sistema.
+
+Como principal foco do sistema, tanto o Prof. Dr. João Batista como o Prof. Dr. Pauo Cugnasca querem automatizar o processo atual e permitir seu crescimento, em especial com a participação das empresas, aproveitando a tendência de virutalização.
+
+Algumas funcionalidades gerais levantadas nas reuniões com os \textit{stakeholders}:
+
+\begin{itemize}
+    \item Integrar participação do orientador no processo: Facilitar comunicação orientador/coordenadores e permitir acompanhamento mais frequente do orientador.
+    \item Base de monografias antigas públicas: Permitir busca e filtro com base em parâmetros.
+    \item Incluir empresas para acompanhar monografias: Permitir acesso à monografia antes para realizar avaliação.
+    \item Automatizar processo de avaliação: Permitir avaliação tanto da banca como da feira (com as empresas).
+    \item Realizar match de temas e orientadores e ideação de temas: Permitir que orientadores, alunos e empresas proponham temas e
+    \item combinar grupos de alunos ou alunos individuais e orientadores para realizar trabalhos.
+    \item Controle de recursos: Permitir ao Nilton gerenciar recursos necessários para as apresentações (imprimir apresentações sem necessidade do aluno entregar arquivos via pen drive, por exemplo).
+    \item Mobilidade: Permitir que avaliações sejam feitas inclusive mobile.
+    \item Construção de bancas: Permitir construção de bancas de TCC, para avaliação.
+    \item Convite em massa (mala direta): Mala direta para convidar pessoas.
+    \item Confiabilidade: resistir a situações adversas (backup de dados).
+    \item Hospedagem: deve ser interna, no servidor do PCS USP.
+\end{itemize}
+
+Além das funcionalidades gerais, também foi levantado o processo atual das disciplinas, resumido nos seguintes tópicos:
+\begin{itemize}
+    \item Pré-disciplinas: Conversa no quarto ano para orientar alunos a pensarem nos temas.
+    \item Estrutura geral das duas disciplinas: Reuniões intermediárias de acompanhamento, com entregas (apresentações usadas e documentação preliminar correspondente).
+    \item Na disciplina de TCC2: Processo de avaliação com Feira e Banca.
+    \begin{itemize}
+        \item Formação e divulgação de bancas: escolha dos participantes.
+        \item Realização da Feira e da Defesa perante banca.
+        \item Correção do TCC, com a validação do orientador.
+    \end{itemize}
+\end{itemize}
+
 \section{Requisitos Funcionais}
+Dadas as funcionalidades gerais encontradas, foram levantados os seguintes requisitos funcionais:
+\begin{itemize}
+    \item Facilitar comunicação entre orientador, coordenadores e alunos.
+    \item Buscar as monografias antigas para consulta pública.
+    \item Incluir avaliadores da feira para acompanhar monografias correntes.
+    \item Permitir avaliação tanto da banca como da feira, permitindo acesso prévio ao conteúdo e facilitando a avaliação.
+    \item Permitir que orientadores, alunos e empresas proponham temas e consigam combinar grupos para realizar as propostas.
+    \item Permitir aos técnicos gerenciarem recursos necessários para as apresentações.
+    \item Permitir a montagem de bancas de TCC.
+\end{itemize}
+
 \section{Requisitos Não Funcionais}
+Além dos requisitos funcionais, alguns requisitos não funcionais importantes foram levantados aqui:
+
+\begin{itemize}
+    \item Confiabilidade: O sistema deve permanecer funcional durante as avaliações finais do curso, pois são cruciais para o bom andamento da matéria.
+    \item Segurança: Os acessos às monografias em andamento devem ser apenas aos envolvidos diretos do trabalho. Além disso, as empresas só podem acessar o resultado final não revisado, para fins de avaliação. Foco especial nos requisitos de Confidencialidade e Integridade.
+    \item Confiabilidade: O sistema deve suportar situações de falha e lidar bem com as informações, garantindo sua proteção. No caso, foco especial em Recuperabilidade.
+    \item Usabilidade: O sistema deve ser bem intuitivo e de aprendizagem fácil, pelo tempo curto dos envolvidos na feira e pela mobilidade envolvida (avaliações pelo celular, por exemplo). Foco especial na Operacionalidade, Estética/Interface e Proteção contra Erros do Usuário.
+    \item Manutenibilidade: O sistema deve ser bem intuitivo de realizar alterações, instalações e afins, dado que alunos podem tocar sua manutenção futuramente. Foco especial na Modificabilidade.
+\end{itemize}
