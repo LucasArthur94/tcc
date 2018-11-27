@@ -1,11 +1,11 @@
-\chapter{Metodologia de Trabalho}
+\chapter{Metodologia de Trabalho}\label{chap:metodologia-trabalho}
 Neste capítulo, serão abordados os processos de construção do sistema, desde o levantamento de requisitos, a divisão do desenvolvimento em iterações e as reuniões de validação com os principais \textit{stakeholders}.
 
 \section{Processos de Levantamento de Requisitos}
 Para o levantamento de requisitos, foram realizadas entrevistas com os \textit{stakeholders} para entender melhor qual é o processo atual, as necessidades encontradas e como o sistema irá ajudar nelas.
 
 \subsection{Entrevista Inicial}
-A primeira entrevista realizada foi com os coordenadores da disciplinas de projeto de formatura: Prof. Dr. João Batista e Prof. Dr. Paulo Cugnasca. Nessa reunião, também teve a participação do Prof. Dr. Fabio Levy Siqueira. Esta entrevista teve dois focos: determinar o processo geral das disciplinas de formatura e encontrar os demais envolvidos que podem ser entrevistados. A lista dos grupos envolvidos e os representantes escolhidos para as entrevistas estão no Documento de Visão, no apêndice \href{chap:vision-doc-appendix}.
+A primeira entrevista realizada foi com os coordenadores da disciplinas de projeto de formatura: Prof. Dr. João Batista e Prof. Dr. Paulo Cugnasca. Nessa reunião, também teve a participação do Prof. Dr. Fabio Levy Siqueira. Esta entrevista teve dois focos: determinar o processo geral das disciplinas de formatura e encontrar os demais envolvidos que podem ser entrevistados. A lista dos grupos envolvidos e os representantes escolhidos para as entrevistas estão no Documento de Visão, no apêndice \ref{chap:vision-doc-appendix}.
 
 \subsection{Entrevistas com os outros \textit{stakeholders}}
 Após a primeira entrevista, ocorreram algumas conversas entre os demais envolvidos do processo. Foram elas:
@@ -15,7 +15,7 @@ Após a primeira entrevista, ocorreram algumas conversas entre os demais envolvi
     \item Fabio Levy: Assumiu três papeis, por motivos de dificuldade de agenda: Responsável pela infraestrutura de hospedagem, professor orientador e avaliador técnico. Mostrou com mais detalhes o processo como um todo, mas da visão de docente, as participações durante a orientação e a entrega do trabalho de formatura. Além disso, determinou algumas restrições de construção e da infraestrutura do projeto.
 \end{itemize}
 
-Após cada entrevista, o processo foi revisto e refinado, obtendo como resultado os diagramas do apêndice \href{chap:bpmn-appendix}.
+Após cada entrevista, o processo foi revisto e refinado, obtendo como resultado os diagramas do apêndice \ref{chap:bpmn-appendix}.
 
 \subsection{Validação do Processo}
 Após as reuniões iniciais, houve uma nova reunião com os coordenadores da disciplina para validar o processo. Após a validação, teve início a construção do Documento Visão e, por consequência, os Casos de Uso do sistema.
@@ -37,27 +37,14 @@ Cada iteração teve duas reuniões atreladas:
 \section{Processos de Desenvolvimento}
 Para realizar as validações com os coordenadores, foi construído um processo para ajudar nos testes tanto do lado de desenvolvimento quanto do lado de validação. Nesta seção, será explicado um pouco mais sobre ambientes de validação e como eles foram usados no processo de desenvolvimento do sistema.
 
-\subsection{Ambientes de Validação}
 Para desenvolvimento de sistemas, é valido criar diversos ambientes de aplicação, para testar as funcionalidades com os diversos \textit{stakeholders}, fora o ambiente onde a aplicação será hospedada, de fato (ou seja, onde ela ficará em ambiente de produção). Cada sistema exige 1 ou mais ambientes durante o fluxo de desenvolvimento, de acordo com a complexidade de negócios do projeto.
 
-\subsubsection{Organização Genérica}
-Para o projeto, foram organizados três ambientes de aplicação para realizar os processos de validação e homologação do sistema, para permitir testes isolados dos \textit{stakeholders} sem afetar o fluxo de desenvolvimento. São eles: Desenvolvimento (ou \textit{next-release}), Homologação (ou \textit{staging}) e Produção (ou \textit{production})\cite{tracyragan2017}.
+Em geral, no mínimo são três ambientes de aplicação para realizar os processos de validação e homologação do sistema, permitindo testes isolados dos \textit{stakeholders}, sem afetar o fluxo de desenvolvimento. São eles: Desenvolvimento (ou \textit{next-release}), Homologação (ou \textit{staging}) e Produção (ou \textit{production})\cite{tracyragan2017}.
 
 \begin{itemize}
     \item Desenvolvimento: onde geralmente fica a versão mais recente da aplicação, com as novas funcionalidades desenvolvidas e testadas já integradas no ambiente. Essa versão serve como uma prévia do que será entregue para homologação. As mudanças nesse ambiente são mais frequentes, dado que uma nova funcionalidade completa já pode ir para este ambiente.
 
-    \item Homologação: Já neste ambiente, as mudanças são bem menores e servem como ambiente de aprovação dessas mudanças por parte dos \textit{stakeholders}. No caso do sistema de TCCs, ele serviu como homologação com os coordenadores do curso. Se possível, ele deve ser o mais fiél ao ambiente final de produção, assim o comportamento ideal dele em homologação será o mesmo em produção.
+    \item Homologação: Já neste ambiente, as mudanças são bem menores e servem como ambiente de aprovação dessas mudanças por parte dos \textit{stakeholders}. No caso do sistema de TCCs, ele serviu como homologação com os coordenadores do curso. Se possível, ele deve ser o mais fiel ao ambiente final de produção, assim o comportamento ideal dele em homologação será o mesmo em produção.
 
     \item Produção: Já este ambiente é onde o sistema irá rodar, de fato. Esse ambiente deve ser o mais estável possível, com alterações apenas homologadas pelos \textit{stakeholders}. Salvo raras exceções, como falhas e problemas encontrados, nada deve ser colocado aqui sem a aprovação no ambiente de homologação.
 \end{itemize}
-
-\subsubsection{Estruturação no Projeto}
-Para o projeto, foram construídos dois ambientes remotos, fora o ambiente final de produção que deve ficar na nuvem da USP. Os ambientes de desenvolvimento e homologação foram criados no Heroku, um serviço de plataforma (\textit{Platform as a Service} - \textbf{PaaS}), com os seguintes domínios:
-
-\begin{itemize}
-    \item Desenvolvimento: \href{https://tccapp-next-release.herokuapp.com}{https://tccapp-next-release.herokuapp.com}
-    \item Homologação: \href{https://tccapp-staging.herokuapp.com}{https://tccapp-staging.herokuapp.com}
-\end{itemize}
-
-\subsection{Tecnologia Usada: Heroku}
-O Heroku é uma plataforma de computação em nuvem conhecida no mercado, com a possibilidade de subir aplicações nas linguagens Ruby, Node.js, Java, Python, Clojure, Scala, Go e PHP. O grande destaque do Heroku está na facilidade em subir uma aplicação com facilidade e de maneira gratuita, o que possibilita testar e validar ideias básicas. A estrutura básica do Heroku funciona com o uso de \textit{dynos}, que são pequenas máquinas tanto para hospedar sua aplicação principal quanto outras auxiliares para serviços externos e/ou paralelos. Resumidamente, ele possui um plano básico gratuito que possibilita testar aplicações de maneira fácil e sem dificuldades de expansão e, se desejar, há máquinas de performance superior, cobradas com base no conceito de \textit{dynos}-hora.

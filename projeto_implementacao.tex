@@ -1,36 +1,36 @@
-\chapter{Projeto e Implementação}
+\chapter{Projeto e Implementação}\label{chap:projeto-implementacao}
 Neste capítulo, entraremos em mais detalhes da parte de projeto e implementação do sistema, com base nos requisitos já levantados, passando pelas tecnologias envolvidas e pela arquitetura do sistema.
 
 \section{Elaboração e Estrutura do Sistema}
 Está seção explica, com mais detalhes, os casos de uso do sistema, as responsabilidades em comum entre cada um deles e como isso pode ser estruturado na arquitetura.
 
 \subsection{Casos de Uso}
-Com bases nos requisitos levantados anteriormente, foram construídos os casos de uso a seguir (para mais detalhes, ver o apêndice \href{chap:use-case-appendix}):
+Com bases nos requisitos levantados anteriormente, foram construídos os casos de uso a seguir (para mais detalhes, ver o apêndice \ref{chap:use-case-appendix}):
 
 \begin{itemize}
-    \item Propor tema de trabalho
-    \item Login
-    \item Cadastrar disciplinas
-    \item Editar disciplinas
-    \item Cadastrar grupos de trabalhos
-    \item Cadastrar professores
-    \item Cadastrar pessoas externas
-    \item Entregar atividade
-    \item Listar entregas
-    \item Listar necessidades adicionais
-    \item Construir bancas práticas
-    \item Construir bancas teóricas
-    \item Avaliar projetos práticos
-    \item Avaliar monografias teóricas
-    \item Calcular nota final dos projetos
-    \item Importar projetos aprovados
-    \item Cadastrar projetos avulsos
-    \item Buscar projetos anteriores
-    \item Buscar temas propostos
+    \item Propor tema de trabalho: Alunos e Orientadores propõem temas em busca de orientadores ou alunos dispostos a realizarem.
+    \item Login: Alunos, Orientadores, Co-orientadores e Coordenadores acessam sistema de maneira tradicional ou via Senha Única USP (para pertencentes à USP).
+    \item Cadastrar disciplinas: Coordenadores cadastram a disciplina, os alunos participantes e as atividades.
+    \item Editar disciplinas: Coordenadores editam disciplinas, cadastrando atividades, editando alunos etc.
+    \item Cadastrar grupos de trabalhos: Coordenadores cadastram os grupos com os temas e os orientadores, com a confirmação da participação do orientador no grupo.
+    \item Cadastrar professores: Coordenadores cadastram professores do departamento que podem orientar/co-orientar.
+    \item Cadastrar pessoas externas: Coordenadores cadastram convidados do sistema que podem avaliar projetos nas bancas práticas e/ou co-orientar.
+    \item Entregar atividade: Alunos submetem no Google Drive arquivos da atividade para a leitura do orientador, co-orientador e coordenadores.
+    \item Listar entregas: Técnicos recebem os arquivos de impressão, com normalização do título, separados por grupo.
+    \item Listar necessidades adicionais: Técnicos recebem necessidades adicionais revisadas pelos orientadores, separadas por grupo.
+    \item Construir bancas práticas: Coordenadores selecionam os participantes da banca prática, já cadastrados no sistema, e os notifica com comentários sobre o evento.
+    \item Construir bancas teóricas: Coordenadores escolhem participantes da banca teórica do grupo, selecionam o presidente da banca, realizam o agendamento do horário, validando inconsistências (participante já possui horário ocupado) e notificam os participantes por e-mail.
+    \item Avaliar projetos práticos: Participantes da banca prática avaliam os projetos que estão envolvidos, limitando avaliações até o final do dia.
+    \item Avaliar monografias teóricas: Participantes da banca teórica avaliam as monografias que estão envolvidas, gerando comentários e definindo o status do trabalho (aprovado, aprovado com correções, recuperação e reprovado), limitando avaliações até o final do dia.
+    \item Calcular nota final dos projetos: Coordenadores determinam a fórmula para calcular as notas finais, com base nas entregas parciais durante as duas disciplinas e o sistema calcula as notas finais de todos os grupos participantes.
+    \item Importar projetos aprovados: Sistema importa monografias revisadas, banners, press-releases, posters e links do site para a base de dados históricos de TCC.
+    \item Cadastrar projetos avulsos: Coordenadores cadastram monografias revisadas, banners, press-releases, posters e links do site de trabalhos anteriores para a base de dados históricos de TCC.
+    \item Buscar projetos anteriores: Usuários externos ao sistema procuram monografias anteriores, de acordo com o nome, ano, turma (semestral ou quadrimestral) e palavras-chave.
+    \item Buscar temas propostos: Alunos e orientadores procuram temas propostos por outros alunos e orientadores, de acordo com o nome, palavras-chave e grupos de pesquisa do departamento, podendo se inscrever nas vagas para esses temas (se houverem).
 \end{itemize}
 
 \subsection{Diagramas de Casos de Uso}
-Os casos de uso foram estruturados nos seguintes diagramas (elaborados com a ajuda da ferramenta PlantText \cite{planttext2018}, para ver como elas foram geradas, ver apêndice \href{chap:use-case-appendix}):
+Os casos de uso foram estruturados nos seguintes diagramas (elaborados com a ajuda da ferramenta PlantText \cite{planttext2018}, para ver como elas foram geradas, ver apêndice \ref{chap:use-case-appendix}):
 
 \begin{figure}[H]
     \centering
@@ -109,3 +109,10 @@ O sistema foi estruturado em aplicações menores \textit{apps}, cada uma com um
     \item rules: Determina as disciplinas e os eventos que serão usados para calcular as notas finais.
     \item score: Gerencia as notas finais calculadas para cada situação, por grupo de trabalho.
 \end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[angle=90, origin=c, scale=0.3]{imagens/output.png}
+    \caption{Diagrama Entidade-Relacionamento do Sistema Desenvovlido, gerado automaticamente}
+    \label{fig:output}
+\end{figure}

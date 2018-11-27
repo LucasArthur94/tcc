@@ -1,5 +1,155 @@
-\chapter{Teste e Validação}
+\chapter{Teste e Validação}\label{chap:teste-validacao}
+Neste capítulo, serão abordadas as etapas de teste e validação do sistema, as reuniões ocorridas e os testes realizados (automatizados ou não).
 
 \section{Validações}
+Para validar os Casos de Uso do sistema, algumas reuniões com os \textit{stakeholders} ocorreram durante o processo de desenvolvimento, com o objetivo de acompanhar se o produto estava de acordo com as expectativas levantadas no início do projeto. Nesta seção, será detalhada as reuniões que ocorreram após o fim de cada iteração e as alterações levantadas.
+
+\subsection{Reunião de 28/09}
+A reunião foi marcada por ser a primeira validação dos \textit{stakeholders}, logo, o sistema como um todo foi uma completa novidade. Para a reunião, foi construído um roteiro de testes a ser executado em conjunto com os coordenadores da disciplina (Prof. Dr. João Batista e Prof. Dr. Paulo Cugnasca):
+
+\begin{itemize}
+    \item Logar como administrador (João ou Paulo)
+    \begin{itemize}
+        \item Sentir navegação do sistema em todas as partes
+        \item Cadastrar 1 aluno
+        \item Cadastrar alunos massivamente        
+    \end{itemize}
+
+    \item Logar como aluno recém cadastrado
+    \begin{itemize}
+        \item Sentir navegação do sistema em todas as partes
+    \end{itemize}
+
+    \item Logar como administrador (João ou Paulo)
+    \begin{itemize}
+        \item Cadastrar docente
+        \item Cadastrar convidado externo
+        \item Cadastrar disciplina
+        \item Cadastrar grupo de trabalho
+    \end{itemize}
+
+    \item Logar como orientador (docente)
+    \begin{itemize}
+        \item Confirmar participação
+    \end{itemize}
+
+    \item Logar como co-orientador (convidado externo)
+    \begin{itemize}
+        \item Confirmar participação
+    \end{itemize}
+
+    \item Logar como administrador (João ou Paulo)
+    \begin{itemize}
+        \item Cadastrar atividade
+        \item Logar como aluno
+        \item Realizar entrega da atividade
+    \end{itemize}
+
+    \item Logar como co-orientador
+    \begin{itemize}
+        \item Revisar atividade
+    \end{itemize}
+
+    \item Logar como orientador
+    \begin{itemize}
+        \item Revisar atividade
+    \end{itemize}
+
+    \item Logar como co-orientador
+    \begin{itemize}
+        \item Tentar revisar atividade
+        \item Ver comentários privados
+    \end{itemize}
+    
+    \item Logar como aluno
+    \begin{itemize}
+        \item Ver comentários públicos
+    \end{itemize}
+\end{itemize}
+
+Nesta reunião, a aceitação do sistema foi satisfatória, apenas com as seguintes sugestões e ressalvas:
+
+\begin{itemize}
+    \item Cadastro massivo de pendentes e inscritos no sistema.
+    \item Customização dos textos dos emails.
+    \item Flexibilidade nos arquivos das atividades.
+    \item Comentários dos alunos nas entregas das atividades.
+    \item Alteração/Recuperação de Senha.
+\end{itemize}
+
+\subsection{Reunião de /11}
+
+Já nesta reunião, o foco da validação era da parte de gerenciamento dos eventos, como alocação de bancas e avaliações em geral. Assim como na primeira reunião, um roteiro de testes foi elaborado para ser usado como base na reunião de validação. Como pré-condição, para facilitar a validação, o ambiente de homologação já terá participantes, grupos, disciplinas, atividades e entregas já presentes no sistema:
+
+\begin{itemize}
+    \item Logar como administrador (João ou Paulo)
+    \begin{itemize}
+        \item Criar evento teórico
+        \item Criar evento prático
+        \item Alocar grupo para evento teórico
+        \item Alocar grupo para evento prático
+        \item Avisar convidados por email do evento teórico
+        \item Avisar convidados por email do evento prático
+    \end{itemize}
+    
+    \item Logar como convidado da banca teórica (docente)
+    \begin{itemize}
+        \item Avaliar grupo em qual foi alocado
+    \end{itemize}
+    
+    \item Logar como convidado da banca prática (convidado)
+    \begin{itemize}
+        \item Avaliar grupo em qual foi alocado
+    \end{itemize}
+    
+    \item Logar como administrador (João ou Paulo)
+    \begin{itemize}
+        \item Criar fórmula para calcular nota (escolher disciplinas e eventos)
+    \end{itemize}
+\end{itemize}
+
+Vale ressaltar que, nessa iteração, não foi possível concluir os Casos de Uso relacionados à listagem de entregas e necessidades adicionais.
+
+Como resultado dessa reunião, a aceitação se manteve positiva, apenas com as seguintes ressalvas:
+
+\begin{itemize}
+    \item 
+\end{itemize}
+
 \section{Testes Executados}
+Além do processo de validação, diversos testes foram escritos para reforçar a prática de verificação do sistema, para saber se ele está sendo desenvolvido corretamente. Nesta seção, serão discutidos os cenários de teste escritos e as ferramentas e dificuldades encontradas para escrevê-los.
+
+\subsection{Cenários de Teste}
+Dado que o conjunto de testes possíveis é infinito, foram selecionados alguns testes a serem escritos. Para o sistema, dois tipos de teste foram adotados: unidade e interface. 
+
+Nos testes unitários, foram testados apenas os métodos escritos com função diferenciada e primordial para o sistema, como por exemplo os métodos de classe dos modelos. Já os testes de interface cobrem, por meio de ferramentas automatizadas, execuções de tela do sistema, verificando o fluxo de neǵocio de cada aplicação.
+
+Cada aplicação escrita foi testada por uma outra aplicação interna a ela, específica pra teste, contendo os seguintes testes:
+
+\begin{itemize}
+    \item Modelo (\textit{test\_model}): Testa os métodos de classe específicos para cada modelo do sistema. Caso não tenha nenhum método escrito, o arquivo fica em branco.
+    \item Formulário (\textit{test\_form}): Testa os formulários relacionados à aplicação, o que é útil para verificar se o cadastro de um novo dado está funcionando corretamente.
+    \item Tela (\textit{test\_view}): Testa a aplicação como um todo, usando a tela como referência.
+\end{itemize}
+
+\subsection{Ferramentas de Teste}
+O Django possui uma biblioteca extensa para realizar testes no sistema. Para testes unitários, usar a parte nativa resolve o problema. Já para escrever testes de interface, a complexidade foi maior, dado que a aplicação precisaria rodar em um servidor para testes, além de uma ferramenta específica para testes automatizados de tela.
+
+Existem diversas ferramentas específicas para rodar testes automatizados que envolvam interface do sistema. Neste projeto, a ferramenta escolhida foi o \textit{Selenium}\cite{selenium2018}, amplamente utilizada nos mais diversos \text{frameworks}. Para o Django, a ferramenta específica usada foi o \textit{Selenium WebDriver}, totalmente integrável com as ferramentas de teste. Em contrapartida, soluções desse aspecto necessitam que a aplicação esteje rodando em um servidor, o que não é o caso nos demais testes.
+
+Para resolver o problema de ter um servidor dedicado para testes,o Django oferece uma solução específica chamada \textit{StaticLiveServerTestCase}\cite{staticfiles2018}: uma classe do Django que sobe um servidor exclusivo para os testes escritos na classe que herdá-la. Esta solução atende a necessidade do \textit{Selenium} de ter um servidor dedicado para rodar os testes automatizados.
+
 \section{Ambientes de Validação}
+Para o projeto, foram construídos dois ambientes remotos, fora o ambiente final de produção que deve ficar na nuvem da USP. Os ambientes de desenvolvimento e homologação foram criados no Heroku, um serviço de plataforma (\textit{Platform as a Service} - \textbf{PaaS}), com os seguintes domínios:
+
+\begin{itemize}
+    \item Desenvolvimento: \href{https://tccapp-next-release.herokuapp.com}{https://tccapp-next-release.herokuapp.com}
+    \item Homologação: \href{https://tccapp-staging.herokuapp.com}{https://tccapp-staging.herokuapp.com}
+\end{itemize}
+
+\subsection{Tecnologia Usada: Heroku}
+O Heroku é uma plataforma de computação em nuvem conhecida no mercado, com a possibilidade de subir aplicações nas linguagens Ruby, Node.js, Java, Python, Clojure, Scala, Go e PHP. O grande destaque do Heroku está na facilidade em subir uma aplicação com facilidade e de maneira gratuita, o que possibilita testar e validar ideias básicas. A estrutura básica do Heroku funciona com o uso de \textit{dynos}, que são pequenas máquinas tanto para hospedar sua aplicação principal quanto outras auxiliares para serviços externos e/ou paralelos. Resumidamente, ele possui um plano básico gratuito que possibilita testar aplicações de maneira fácil e sem dificuldades de expansão e, se desejar, há máquinas de performance superior, cobradas com base no conceito de \textit{dynos}-hora.
+
+
+
+
