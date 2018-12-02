@@ -7,8 +7,8 @@ Inicialmente, para levantar os casos de uso, foram realizadas diversas entrevist
 Após a primeira entrevista, ocorreram outras conversas entre os demais envolvidos do processo. Foram elas:
 
 \begin{itemize}
-    \item Nilton: Responsável técnico dos eventos de banca teórica e feira prática. Evidenciou as necessidades técnicas que possui nos dois dias de evento e deu sugestões de como o sistema pode ajudar em seu trabalho.
-    \item Fabio Levy: Assumiu três papéis, por motivos de dificuldade de agenda: Responsável pela infraestrutura de hospedagem, professor orientador e avaliador técnico. Mostrou com mais detalhes o processo como um todo, mas da visão de docente, as participações durante a orientação e a entrega do trabalho de formatura. Além disso, determinou algumas restrições de construção e da infraestrutura do projeto.
+    \item Nilton: responsável técnico dos eventos de banca teórica e feira prática. Evidenciou as necessidades técnicas que possui nos dois dias de evento e deu sugestões de como o sistema pode ajudar em seu trabalho.
+    \item Fabio Levy: assumiu três papéis, por motivos de dificuldade de agenda: Responsável pela infraestrutura de hospedagem, professor orientador e avaliador técnico. Mostrou com mais detalhes o processo como um todo, mas da visão de docente, as participações durante a orientação e a entrega do trabalho de formatura. Além disso, determinou algumas restrições de construção e da infraestrutura do projeto.
 \end{itemize}
 
 Após cada entrevista, o processo \textit{AS IS} foi revisto e refinado, obtendo como resultado os diagramas do apêndice \ref{chap:bpmn-appendix}. Com base nesses diagramas, foram construídos os casos de uso do sistema, detalhados no apêndice \ref{chap:use-case-appendix}). 
@@ -22,7 +22,7 @@ Para o sistema, temos os seguintes atores:
     \item Convidados: realiza a co-orientação dos alunos (se necessário) e a avaliação das bancas práticas.
     \item Técnicos: cuida da gestão dos recursos necessários para os eventos teóricos e práticos.
     \item Coordenadores: gerenciam tudo das disciplinas de projeto de formatura, as entregas, atividades, eventos e centralização das avaliações.
-    \item Público: Acessa os recursos públicos, como as monografias finais.
+    \item Público: acessa os recursos públicos, como as monografias finais.
 \end{itemize}
 
 \subsection{Casos de Uso Implementados}
@@ -54,26 +54,26 @@ Com os diagramas de caso de uso, agora há a descrição dos casos de uso implem
 \begin{itemize}
     \item Primeira Iteração - Julho/Setembro
     \begin{itemize}
-        \item Login: Alunos, Orientadores, Co-orientadores e Coordenadores acessam sistema de maneira tradicional ou via Senha Única USP (para pertencentes à USP).
-        \item Cadastrar disciplinas: Coordenadores cadastram a disciplina, os alunos participantes e as atividades.
-        \item Editar disciplinas: Coordenadores editam disciplinas, cadastrando atividades, editando alunos etc.
-        \item Cadastrar grupos de trabalhos: Coordenadores cadastram os grupos com os temas e os orientadores, com a confirmação da participação do orientador no grupo.
-        \item Cadastrar professores: Coordenadores cadastram professores do departamento que podem orientar/co-orientar.
-        \item Cadastrar pessoas externas: Coordenadores cadastram convidados do sistema que podem avaliar projetos nas bancas práticas e/ou co-orientar.
-        \item Entregar atividade: Alunos submetem no Google Drive arquivos da atividade para a leitura do orientador, co-orientador e coordenadores.
+        \item Login: alunos, Orientadores, Co-orientadores e Coordenadores acessam sistema de maneira tradicional ou via Senha Única USP (para pertencentes à USP).
+        \item Cadastrar disciplinas: coordenadores cadastram a disciplina, os alunos participantes e as atividades.
+        \item Editar disciplinas: coordenadores editam disciplinas, cadastrando atividades, editando alunos etc.
+        \item Cadastrar grupos de trabalhos: coordenadores cadastram os grupos com os temas e os orientadores, com a confirmação da participação do orientador no grupo.
+        \item Cadastrar professores: coordenadores cadastram professores do departamento que podem orientar/co-orientar.
+        \item Cadastrar pessoas externas: coordenadores cadastram convidados do sistema que podem avaliar projetos nas bancas práticas e/ou co-orientar.
+        \item Entregar atividade: alunos submetem no Google Drive arquivos da atividade para a leitura do orientador, co-orientador e coordenadores.
     \end{itemize}
 \end{itemize}
 
 \begin{itemize}
     \item Segunda Iteração - Outubro/Novembro
     \begin{itemize}
-        \item Listar entregas: Técnicos recebem os arquivos de impressão, com normalização do título, separados por grupo.
+        \item Listar entregas: técnicos recebem os arquivos de impressão, com normalização do título, separados por grupo.
         \item Listar necessidades adicionais: Técnicos recebem necessidades adicionais revisadas pelos orientadores, separadas por grupo.
-        \item Construir bancas práticas: Coordenadores selecionam os participantes da banca prática, já cadastrados no sistema, e os notifica com comentários sobre o evento.
-        \item Construir bancas teóricas: Coordenadores escolhem participantes da banca teórica do grupo, selecionam o presidente da banca, realizam o agendamento do horário, validando inconsistências (participante já possui horário ocupado) e notificam os participantes por e-mail.
-        \item Avaliar projetos práticos: Participantes da banca prática avaliam os projetos que estão envolvidos, limitando avaliações até o final do dia.
-        \item Avaliar monografias teóricas: Participantes da banca teórica avaliam as monografias que estão envolvidas, gerando comentários e definindo o status do trabalho (aprovado, aprovado com correções, recuperação e reprovado), limitando avaliações até o final do dia.
-        \item Calcular nota final dos projetos: Coordenadores determinam a fórmula para calcular as notas finais, com base nas entregas parciais durante as duas disciplinas e o sistema calcula as notas finais de todos os grupos participantes.
+        \item Construir bancas práticas: coordenadores selecionam os participantes da banca prática, já cadastrados no sistema, e os notifica com comentários sobre o evento.
+        \item Construir bancas teóricas: coordenadores escolhem participantes da banca teórica do grupo, selecionam o presidente da banca, realizam o agendamento do horário, validando inconsistências (participante já possui horário ocupado) e notificam os participantes por e-mail.
+        \item Avaliar projetos práticos: participantes da banca prática avaliam os projetos que estão envolvidos, limitando avaliações até o final do dia.
+        \item Avaliar monografias teóricas: participantes da banca teórica avaliam as monografias que estão envolvidas, gerando comentários e definindo o status do trabalho (aprovado, aprovado com correções, recuperação e reprovado), limitando avaliações até o final do dia.
+        \item Calcular nota final dos projetos: coordenadores determinam a fórmula para calcular as notas finais, com base nas entregas parciais durante as duas disciplinas e o sistema calcula as notas finais de todos os grupos participantes.
     \end{itemize}
 \end{itemize}
 
@@ -83,11 +83,11 @@ Cada iteração teve sua reunião de validação dos casos de uso: a primeira no
 Há também os casos de uso não implementados do sistema, levantados como perspectivas de continuidade do sistema. São eles:
 
 \begin{itemize}
-    \item Importar projetos aprovados: Sistema importa monografias revisadas, banners, press-releases, posters e links do site para a base de dados históricos de TCC.
-    \item Cadastrar projetos avulsos: Coordenadores cadastram monografias revisadas, banners, press-releases, posters e links do site de trabalhos anteriores para a base de dados históricos de TCC.
-    \item Propor tema de trabalho: Alunos e Orientadores propõem temas em busca de orientadores ou alunos dispostos a realizarem.
-    \item Buscar projetos anteriores: Usuários externos ao sistema procuram monografias anteriores, de acordo com o nome, ano, turma (semestral ou quadrimestral) e palavras-chave.
-    \item Buscar temas propostos: Alunos e orientadores procuram temas propostos por outros alunos e orientadores, de acordo com o nome, palavras-chave e grupos de pesquisa do departamento, podendo se inscrever nas vagas para esses temas (se houverem).
+    \item Importar projetos aprovados: sistema importa monografias revisadas, banners, press-releases, posters e links do site para a base de dados históricos de TCC.
+    \item Cadastrar projetos avulsos: coordenadores cadastram monografias revisadas, banners, press-releases, posters e links do site de trabalhos anteriores para a base de dados históricos de TCC.
+    \item Propor tema de trabalho: alunos e Orientadores propõem temas em busca de orientadores ou alunos dispostos a realizarem.
+    \item Buscar projetos anteriores: usuários externos ao sistema procuram monografias anteriores, de acordo com o nome, ano, turma (semestral ou quadrimestral) e palavras-chave.
+    \item Buscar temas propostos: alunos e orientadores procuram temas propostos por outros alunos e orientadores, de acordo com o nome, palavras-chave e grupos de pesquisa do departamento, podendo se inscrever nas vagas para esses temas (se houverem).
 \end{itemize}
 
 \begin{figure}[H]
@@ -120,9 +120,9 @@ O Django é estruturado em aplicações (apps), onde cada aplicação correspond
 O padrão \textit{Model-View-Controller} - MVC é um padrão arquitetural para organizar os componentes da aplicação. Ele é dividido em três grandes grupos\cite{thedjangobook2018}:
 
 \begin{itemize}
-    \item Modelo (\textit{Model}): Fonte de informação, contendo os dados da aplicação, é onde geralmente fica a lógica de negócio.
-    \item Visualização (\textit{View}): Camada de apresentação dos dados da aplicação. No caso do Django, ele é chamado de \textit{Template}.
-    \item Controlador (\textit{Controller}): Camada de controle que interliga o modelo com a apresentação dos dados. No caso do Django, ele é conhecido como \textit{View}.
+    \item Modelo (\textit{Model}): fonte de informação, contendo os dados da aplicação, é onde geralmente fica a lógica de negócio.
+    \item Visualização (\textit{View}): camada de apresentação dos dados da aplicação. No caso do Django, ele é chamado de \textit{Template}.
+    \item Controlador (\textit{Controller}): camada de controle que interliga o modelo com a apresentação dos dados. No caso do Django, ele é conhecido como \textit{View}.
 \end{itemize}
 
 A vantagem do padrão está no fluxo de dados que existe entre os grupos, além de evitar códigos com funcionalidades diferentes em lugares errados, como, por exemplo, lógica de negócio na camada de apresentação.
@@ -145,18 +145,18 @@ Em relação aos acessos do sistema, o Django possui uma limitação (caso use o
 O Django possui uma filosofia em sua documentação\cite{djangodocs}: "Uma aplicação é um aplicativo da Web que faz alguma coisa - por exemplo, um sistema de blog, um banco de dados de registros públicos ou um aplicativo de pesquisa simples. Um projeto é uma coleção de configurações e aplicações para um site específico." Seguindo essa filosofia definida, o sistema foi estruturado em aplicações menores \textit{apps}, cada qual com sua responsabilidade:
 
 \begin{itemize}
-    \item home: Aplicação responsável por gerenciar as funções básicas a todos os usuários, como por exemplo login/logout, o conteúdo da página de entrada, entre outros.
-    \item users: Gerencia os usuários cadastrados do sistema e os seus perfis (aluno, docente, convidado e coordenador)
-    \item disciplines: Gerencia as disciplinas de TCC do curso, duas disciplinas por ano (TCC1 e TCC2).
-    \item activities: Gerencia as atividades das diversas disciplinas do sistema.
-    \item workgroups: Cuida dos grupos de trabalho criados durante as disciplinas. 
-    \item deliveries: Cuida das entregas das atividades do curso, cada uma realizada pelos grupos de trabalho e revisadas pelos orientadores/co-orientadores.
-    \item rooms: Cuida das salas que serão usadas nos eventos de bancas teóricas e práticas.
-    \item events: Gerencia os eventos teóricos e práticos que ocorrem nas disciplinas de TCC2.
-    \item allocations: Cuida das alocações de cada grupo, para cada evento teórico ou prático, junto com os convidados e docentes que avaliarão o grupo.
-    \item evaluations: Gerencia as avaliações que cada docente ou convidado alocado fará nos eventos.
-    \item rules: Determina as disciplinas e os eventos que serão usados para calcular as notas finais.
-    \item score: Gerencia as notas finais calculadas para cada situação, por grupo de trabalho.
+    \item home: aplicação responsável por gerenciar as funções básicas a todos os usuários, como por exemplo login/logout, o conteúdo da página de entrada, entre outros.
+    \item users: gerencia os usuários cadastrados do sistema e os seus perfis (aluno, docente, convidado e coordenador)
+    \item disciplines: gerencia as disciplinas de TCC do curso, duas disciplinas por ano (TCC1 e TCC2).
+    \item activities: gerencia as atividades das diversas disciplinas do sistema.
+    \item workgroups: cuida dos grupos de trabalho criados durante as disciplinas. 
+    \item deliveries: cuida das entregas das atividades do curso, cada uma realizada pelos grupos de trabalho e revisadas pelos orientadores/co-orientadores.
+    \item rooms: cuida das salas que serão usadas nos eventos de bancas teóricas e práticas.
+    \item events: gerencia os eventos teóricos e práticos que ocorrem nas disciplinas de TCC2.
+    \item allocations: cuida das alocações de cada grupo, para cada evento teórico ou prático, junto com os convidados e docentes que avaliarão o grupo.
+    \item evaluations: gerencia as avaliações que cada docente ou convidado alocado fará nos eventos.
+    \item rules: determina as disciplinas e os eventos que serão usados para calcular as notas finais.
+    \item score: gerencia as notas finais calculadas para cada situação, por grupo de trabalho.
 \end{itemize}
 
 Com as aplicações estabelecidas, os dados foram organizados na arquitetura de banco de dados a seguir:
