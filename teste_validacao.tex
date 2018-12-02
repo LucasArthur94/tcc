@@ -77,7 +77,7 @@ Nesta reunião, a aceitação do sistema foi satisfatória, apenas com as seguin
     \item Alteração/Recuperação de Senha.
 \end{itemize}
 
-\subsection{Reunião de /11}
+\subsection{Reunião de 30/11}
 
 Já nesta reunião, o foco da validação era da parte de gerenciamento dos eventos, como alocação de bancas e avaliações em geral. Assim como na primeira reunião, um roteiro de testes foi elaborado para ser usado como base na reunião de validação. Como pré-condição, para facilitar a validação, o ambiente de homologação já terá participantes, grupos, disciplinas, atividades e entregas já presentes no sistema:
 
@@ -110,14 +110,10 @@ Já nesta reunião, o foco da validação era da parte de gerenciamento dos even
 
 Vale ressaltar que, nessa iteração, não foi possível concluir os Casos de Uso relacionados à listagem de entregas e necessidades adicionais.
 
-Como resultado dessa reunião, a aceitação se manteve positiva, apenas com as seguintes ressalvas:
-
-\begin{itemize}
-    \item 
-\end{itemize}
+Como resultado dessa reunião, a aceitação se manteve positiva, sem grandes ressalvas ao resultado.
 
 \section{Testes Executados}
-Além do processo de validação, diversos testes foram escritos para reforçar a prática de verificação do sistema, para saber se ele está sendo desenvolvido corretamente. Nesta seção, serão discutidos os cenários de teste escritos e as ferramentas e dificuldades encontradas para escrevê-los.
+Além do processo de validação, seguindo a filosofia apresentada no capítulo \ref{chap:aspectos-conceituais}, diversos testes foram escritos para reforçar a prática de verificação do sistema, para saber se ele está sendo desenvolvido corretamente. Nesta seção, serão discutidos os cenários de teste escritos e as ferramentas e dificuldades encontradas para escrevê-los.
 
 \subsection{Cenários de Teste}
 Dado que o conjunto de testes possíveis é infinito, foram selecionados alguns testes a serem escritos. Para o sistema, dois tipos de teste foram adotados: unidade e interface. 
@@ -132,23 +128,14 @@ Cada aplicação escrita foi testada por uma outra aplicação interna a ela, es
     \item Tela (\textit{test\_view}): Testa a aplicação como um todo, usando a tela como referência.
 \end{itemize}
 
+Todas as telas possuem testes escritos, bem como todos os formulários. Apenas os modelos de alocação, avaliação, usuários e grupos de trabalho não têm testes, dado que não possuem métodos nos modelos. No total, 39 testes foram elaborados para o sistema.
+
 \subsection{Ferramentas de Teste}
 O Django possui uma biblioteca extensa para realizar testes no sistema. Para testes unitários, usar a parte nativa resolve o problema. Já para escrever testes de interface, a complexidade foi maior, dado que a aplicação precisaria rodar em um servidor para testes, além de uma ferramenta específica para testes automatizados de tela.
 
 Existem diversas ferramentas específicas para rodar testes automatizados que envolvam interface do sistema. Neste projeto, a ferramenta escolhida foi o \textit{Selenium}\cite{selenium2018}, amplamente utilizada nos mais diversos \text{frameworks}. Para o Django, a ferramenta específica usada foi o \textit{Selenium WebDriver}, totalmente integrável com as ferramentas de teste. Em contrapartida, soluções desse aspecto necessitam que a aplicação esteje rodando em um servidor, o que não é o caso nos demais testes.
 
 Para resolver o problema de ter um servidor dedicado para testes,o Django oferece uma solução específica chamada \textit{StaticLiveServerTestCase}\cite{staticfiles2018}: uma classe do Django que sobe um servidor exclusivo para os testes escritos na classe que herdá-la. Esta solução atende a necessidade do \textit{Selenium} de ter um servidor dedicado para rodar os testes automatizados.
-
-\section{Ambientes de Validação}
-Para o projeto, foram construídos dois ambientes remotos, fora o ambiente final de produção que deve ficar na nuvem da USP. Os ambientes de desenvolvimento e homologação foram criados no Heroku, um serviço de plataforma (\textit{Platform as a Service} - \textbf{PaaS}), com os seguintes domínios:
-
-\begin{itemize}
-    \item Desenvolvimento: \href{https://tccapp-next-release.herokuapp.com}{https://tccapp-next-release.herokuapp.com}
-    \item Homologação: \href{https://tccapp-staging.herokuapp.com}{https://tccapp-staging.herokuapp.com}
-\end{itemize}
-
-\subsection{Tecnologia Usada: Heroku}
-O Heroku é uma plataforma de computação em nuvem conhecida no mercado, com a possibilidade de subir aplicações nas linguagens Ruby, Node.js, Java, Python, Clojure, Scala, Go e PHP. O grande destaque do Heroku está na facilidade em subir uma aplicação com facilidade e de maneira gratuita, o que possibilita testar e validar ideias básicas. A estrutura básica do Heroku funciona com o uso de \textit{dynos}, que são pequenas máquinas tanto para hospedar sua aplicação principal quanto outras auxiliares para serviços externos e/ou paralelos. Resumidamente, ele possui um plano básico gratuito que possibilita testar aplicações de maneira fácil e sem dificuldades de expansão e, se desejar, há máquinas de performance superior, cobradas com base no conceito de \textit{dynos}-hora.
 
 
 

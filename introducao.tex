@@ -1,34 +1,29 @@
 \chapter{Introdução}\label{chap:introducao}
-Este capítulo é responsável por explicar conceitos iniciais do projeto, as motivações, o objetivo e como este trabalho está organizado.
+A motivação deste trabalho está em automatizar o processo relacionado às disciplinas de projeto de formatura do Departamento de Engenharia de Computação e Sistemas Digitais (PCS), que atualmente é manual, com avaliações em formulários de papel; descentralizado, dado que as entregas são realizadas em plataformas diferentes, muitas vezes não envolvendo os orientadores; e trabalhoso, dado que todo o processo de cálculo de notas, controle de formulários preenchidos e afins é feito nos dias de avaliação, muitas vezes com tempo escasso.
 
-\section{Motivação}
-A motivação deste trabalho está em automatizar o processo relacionado às disciplinas de projeto de formatura do Departamento de Engenharia de Computação e Sistemas Digitais (PCS), que atualmente é manual, trabalhoso e descentralizado.
-
-As disciplinas de projeto de formatura usam de diversos sistemas como base para seu processo, como por exemplo o Tidia-AE. Além disso, toda a parte de avaliação e cálculo das notas é realizado de maneira manual, tanto pelos avaliadores, como pelos coordenadores, o que gera trabalho excessivo de todos os envolvidos.
+As disciplinas de projeto de formatura usam diversos sistemas como base para seu processo, como por exemplo o Tidia-AE. Além disso, toda a parte de avaliação e cálculo das notas é realizado de maneira manual, tanto pelos avaliadores, como pelos coordenadores, o que gera trabalho excessivo de todos os envolvidos.
 
 \section{Objetivo}
-O objetivo deste trabalho está em construir um sistema responsável por controlar as disciplinas do projeto de formatura do Departamento de Engenharia de Computação e Sistemas Digitais (PCS), automatizando boa parte do processo manual, bem como centralizar em um único sistema todas as etapas deste processo, evitando o uso de diversos sistemas.
+O objetivo deste trabalho é elaborar um sistema responsável por controlar as disciplinas do projeto de formatura do Departamento de Engenharia de Computação e Sistemas Digitais (PCS), automatizando parte do processo manual, centralizando em um único sistema todas as etapas deste processo.
 
 \section{Justificativa}
-A maior justificativa do trabalho está no uso amplo de recursos manuais para atender os requisitos do processo das disciplinas de formatura. Toda a parte de atividades, entregas, eventos e avaliações são gerenciadas de maneira manual, com o auxilio de alguns sistemas para cuidar da parte de arquivos submetidos.
+As disciplinas de formatura do PCS são gerenciadas pelos coordenadores da disciplina Prof. Dr. João Batista e Prof. Dr. Paulo Cugnasca. Elas ocorrem com entregas parciais, submetidas no Tidia-AE, sem o acompanhamento direto do orientador. Ao final da segunda disciplina de formatura, há os eventos de avaliação do projeto, com formulários manuais e cálculo das notas no curto espaço de tempo, o que dificulta e torna trabalhoso o gerenciamento das notas finais do processo.
 
 \subsection{Sistemas Concorrentes}
-Dois sistemas foram analisados como soluções para a motivação proposta: Tidia-AE \href{https://ae4.tidia-ae.usp.br}{https://ae4.tidia-ae.usp.br} e Moodle \href{https://moodle.org/}{https://moodle.org/}.
+Dois sistemas foram analisados como soluções: Tidia-AE \href{https://ae4.tidia-ae.usp.br}{https://ae4.tidia-ae.usp.br} e Moodle \href{https://moodle.org/}{https://moodle.org/}.
 
-O Tidia-AE é usado atualmente pelos coordenadores como sistema de suporte para as entregas intermediárias das disciplinas. Para este aspecto, ele atende bem as necessidades, organizando por grupos formados os respoitórios. Porém, não possui uma solução específica para as avaliações, bem como não existe uma maneira de realizar a alocação para os eventos teóricos e práticos
+O Tidia-AE é usado atualmente pelos coordenadores como sistema de suporte para as entregas intermediárias das disciplinas. Para este aspecto, ele atende bem as necessidades. Porém, não possui uma solução específica para as avaliações, bem como não existe uma maneira de realizar a alocação para os eventos teóricos e práticos
 
-Já o Moodle é uma solução mais robusta, customizável de acordo com as necessidades e com a USP já possuíndo uma solução nesses moldes: o E-Disciplinas \href{https://edisciplinas.usp.br}{https://edisciplinas.usp.br}. A solução é mais poderosa, permitindo avaliações no sistema, bem como a funcionalidade de repositório. Porém, exigiria modificações custosas para permitir as avaliações nos moldes da disciplina, além de outras modificações pesadas que não justificam o uso do Moodle.
-
-Dadas as análises de outras soluções, visando as necessidades observadas acima, há uma justificativa plausível para a construção de um sistema customizado, que atenda às necessidades específicas do processo.
+Já o Moodle do E-Disciplinas \href{https://edisciplinas.usp.br}{https://edisciplinas.usp.br} é uma solução mais robusta, com avaliações e a funcionalidade de repositório. Contudo, ainda não atende o negócio como um todo, bem como a dinâmica de avaliações das disciplinas.
 
 \section{Organização do Trabalho}
-Este trabalho está organizado nos seguintes moldes:
+Este trabalho está organizado da seguinte forma:
 
 \begin{itemize}
-    \item Capítulo \ref{chap:aspectos-conceituais}: Trata os aspectos conceituais de Engenharia de Software usados no desenvolvimento deste trabalho.
-    \item Capítulo \ref{chap:metodologia-trabalho}: Discute um pouco sobre a metodologia de trabalho usada para a construção do sistema.
-    \item Capítulo \ref{chap:especificacao-requisitos-sistema}: Lista os requisitos gerais do sistema.
-    \item Capítulo \ref{chap:projeto-implementacao}: Discorre sobre a parte de projeto, arquitetura e implementação do trabalho.
-    \item Capítulo \ref{chap:teste-validacao}: Discute um pouco sobre os testes executados e o processo de validação com os coordenadores.
+    \item Capítulo \ref{chap:aspectos-conceituais}: Aspectos conceituais de Engenharia de Software usados no desenvolvimento deste trabalho, como Levantamento de Requisitos, Casos de Uso e Histórias de Usuário.
+    \item Capítulo \ref{chap:metodologia-trabalho}: Discute a metodologia usada para a construção do sistema.
+    \item Capítulo \ref{chap:especificacao-requisitos-sistema}: Mostra os requisitos gerais do sistema.
+    \item Capítulo \ref{chap:projeto-implementacao}: Discorre sobre projeto, arquitetura e implementação.
+    \item Capítulo \ref{chap:teste-validacao}: Discute sobre os testes executados e o processo de validação com os coordenadores.
     \item Capítulo \ref{chap:consideracoes-finais}: Mostra as expectativas do trabalho, próximos passos e resultados obtidos.
 \end{itemize}

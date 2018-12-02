@@ -1,50 +1,45 @@
 \chapter{Metodologia de Trabalho}\label{chap:metodologia-trabalho}
-Neste capítulo, serão abordados os processos de construção do sistema, desde o levantamento de requisitos, a divisão do desenvolvimento em iterações e as reuniões de validação com os principais \textit{stakeholders}.
+Neste capítulo, serão discutidos os processos de levantamento de requisitos, a divisão do desenvolvimento em iterações e as reuniões de validação com os principais \textit{stakeholders}.
 
 \section{Processos de Levantamento de Requisitos}
 Para o levantamento de requisitos, foram realizadas entrevistas com os \textit{stakeholders} para entender melhor qual é o processo atual, as necessidades encontradas e como o sistema irá ajudar nelas.
 
-\subsection{Entrevista Inicial}
-A primeira entrevista realizada foi com os coordenadores da disciplinas de projeto de formatura: Prof. Dr. João Batista e Prof. Dr. Paulo Cugnasca. Nessa reunião, também teve a participação do Prof. Dr. Fabio Levy Siqueira. Esta entrevista teve dois focos: determinar o processo geral das disciplinas de formatura e encontrar os demais envolvidos que podem ser entrevistados. A lista dos grupos envolvidos e os representantes escolhidos para as entrevistas estão no Documento de Visão, no apêndice \ref{chap:vision-doc-appendix}.
+\subsection{Entrevistas Iniciais}
+A primeira etapa do processo foi a realização de entrevistas com os principais \textit{stakeholders}, de maneira a modelar o processo atual, entender melhor como o sistema irá atuar e estabelecer seus requisitos.
 
-\subsection{Entrevistas com os outros \textit{stakeholders}}
-Após a primeira entrevista, ocorreram algumas conversas entre os demais envolvidos do processo. Foram elas:
+Seguindo os conceitos do capítulo \ref{chap:aspectos-conceituais}, ocorreram entrevistas com os \textit{stakeholders} como forma de levantar requisitos. Por meio dessas entrevistas, o processo geral de negócio (\textit{AS IS}) foi modelado usando BPMN.
+
+Após a modelagem, teve início a construção do Documento Visão, usando como base o processo recém modelado. Com a finalização do Documento Visão, resta entender qual ferramenta convém para a representação de requisitos do sistema.
+
+\subsection{Casos de Uso e Histórias de Usuário}
+Realizando um comparativo entre casos de uso e histórias de usuário, tomando como base os conceitos expostos no capítulo \ref{chap:aspectos-conceituais}:
 
 \begin{itemize}
-    \item Nilton: Responsável técnico dos eventos de banca teórica e feira prática. Evidenciou as necessidades técnicas que possui nos dois dias de evento e deu sugestões de como o sistema pode ajudar em seu trabalho.
-    \item Fabio Levy: Assumiu três papeis, por motivos de dificuldade de agenda: Responsável pela infraestrutura de hospedagem, professor orientador e avaliador técnico. Mostrou com mais detalhes o processo como um todo, mas da visão de docente, as participações durante a orientação e a entrega do trabalho de formatura. Além disso, determinou algumas restrições de construção e da infraestrutura do projeto.
+    \item Casos de uso tendem a ser maiores, mais burocráticos e detalhados, ao invés de histórias de usuário, que são mais modulares, simples e flexíveis.
+    \item Histórias de usuário demandam maior participação dos \textit{stakeholders}, dada sua maior simplicidade, diferentemente dos casos de uso que, por serem mais completos, servem como base contratual sobre como o sistema deve ser construído.
 \end{itemize}
 
-Após cada entrevista, o processo foi revisto e refinado, obtendo como resultado os diagramas do apêndice \ref{chap:bpmn-appendix}.
-
-\subsection{Validação do Processo}
-Após as reuniões iniciais, houve uma nova reunião com os coordenadores da disciplina para validar o processo. Após a validação, teve início a construção do Documento Visão e, por consequência, os Casos de Uso do sistema.
+Tomando como base essas diferenças, a solução adotada foram os casos de uso, dada a escassez de tempo de muitos dos \textit{stakeholders}, o que dificultaria bastante o desenvolvimento do sistema com o uso de histórias de usuário.
 
 \section{Divisão em Iterações}
-Após a elaboração do Documento Visão, os Casos de Uso elaborados foram divididos em duas iterações:
+Após a elaboração do Documento Visão, os Casos de Uso elaborados foram divididos em iterações, cada uma com duas reuniões atreladas:
 
 \begin{itemize}
-    \item Julho - Setembro: Cadastro de disciplinas, atividades, entregas, usuários em geral e grupos de trabalho.
-    \item Outubro - Novembro: Cadastro de eventos e avaliações em geral.
-\end{itemize}
-
-Cada iteração teve duas reuniões atreladas:
-\begin{itemize}
-    \item Reunião de revisão dos casos de uso: Os coordenadores revisaram os casos de uso a serem desenvolvidos, evidenciaram detalhes faltantes nas descrições e priorizaram quais casos de uso da iteração são os mais importantes.
-    \item Reunião de validação do sistema: Os coordenadores revisaram o fluxo do sistema como um todo, se o que foi desenvolvido está conforme com os casos de usos e se há sugestões de alterações e quais são suas prioridades.
+    \item Reunião de revisão dos casos de uso: Os \textit{stakeholders} revisam os casos de uso a serem desenvolvidos, evidenciaram detalhes faltantes nas descrições e priorizaram quais casos de uso da iteração são os mais importantes.
+    \item Reunião de validação do sistema: Os \textit{stakeholders} revisam o fluxo do sistema como um todo, se o que foi desenvolvido está conforme com os casos de usos e se há sugestões de alterações e quais são suas prioridades.
 \end{itemize}
 
 \section{Processos de Desenvolvimento}
-Para realizar as validações com os coordenadores, foi construído um processo para ajudar nos testes tanto do lado de desenvolvimento quanto do lado de validação. Nesta seção, será explicado um pouco mais sobre ambientes de validação e como eles foram usados no processo de desenvolvimento do sistema.
+Nesta seção, será explicado um pouco mais sobre ambientes de validação e como eles são usados no processo de desenvolvimento do sistema.
 
-Para desenvolvimento de sistemas, é valido criar diversos ambientes de aplicação, para testar as funcionalidades com os diversos \textit{stakeholders}, fora o ambiente onde a aplicação será hospedada, de fato (ou seja, onde ela ficará em ambiente de produção). Cada sistema exige 1 ou mais ambientes durante o fluxo de desenvolvimento, de acordo com a complexidade de negócios do projeto.
+Para desenvolvimento de sistemas, são criados diversos ambientes de aplicação, para testar as funcionalidades com os diversos \textit{stakeholders}, de acordo com a complexidade de negócios do projeto.
 
-Em geral, no mínimo são três ambientes de aplicação para realizar os processos de validação e homologação do sistema, permitindo testes isolados dos \textit{stakeholders}, sem afetar o fluxo de desenvolvimento. São eles: Desenvolvimento (ou \textit{next-release}), Homologação (ou \textit{staging}) e Produção (ou \textit{production})\cite{tracyragan2017}.
+Em geral, são três ambientes de aplicação para realizar os processos de validação do sistema, permitindo testes isolados dos \textit{stakeholders}, sem afetar o fluxo de desenvolvimento. São eles\cite{tracyragan2017}:
 
 \begin{itemize}
     \item Desenvolvimento: onde geralmente fica a versão mais recente da aplicação, com as novas funcionalidades desenvolvidas e testadas já integradas no ambiente. Essa versão serve como uma prévia do que será entregue para homologação. As mudanças nesse ambiente são mais frequentes, dado que uma nova funcionalidade completa já pode ir para este ambiente.
 
-    \item Homologação: Já neste ambiente, as mudanças são bem menores e servem como ambiente de aprovação dessas mudanças por parte dos \textit{stakeholders}. No caso do sistema de TCCs, ele serviu como homologação com os coordenadores do curso. Se possível, ele deve ser o mais fiel ao ambiente final de produção, assim o comportamento ideal dele em homologação será o mesmo em produção.
+    \item Homologação: Já neste ambiente, as mudanças são bem menores e servem como ambiente de validação para os \textit{stakeholders}. No caso do sistema de TCCs, ele serviu como homologação com os coordenadores do curso. Se possível, ele deve ser o mais fiel ao ambiente final de produção, assim o comportamento ideal dele em homologação será o mesmo em produção.
 
     \item Produção: Já este ambiente é onde o sistema irá rodar, de fato. Esse ambiente deve ser o mais estável possível, com alterações apenas homologadas pelos \textit{stakeholders}. Salvo raras exceções, como falhas e problemas encontrados, nada deve ser colocado aqui sem a aprovação no ambiente de homologação.
 \end{itemize}
