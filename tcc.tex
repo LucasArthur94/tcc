@@ -18,7 +18,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,amsthm,amsfonts,amssymb}
 \usepackage{float}
-\usepackage{graphicx,hyperref,cite,enumerate,fontawesome}
+\usepackage{graphicx,hyperref,cite,enumerate,fontawesome,pdfpages, rotating}
 
 % ========== Language options ==========
 \usepackage[brazil]{babel}
@@ -50,7 +50,7 @@
 %		Nome Sobrenome}
 
 % Orientador / Coorientador
-\orientador{Prof. Dr. Fabio Levy Siqueira}
+\orientador{Prof. Dr. Fábio Levy Siqueira}
 % \coorientador{Nome do coorientador (opcional)}
 
 % Tipo de documento
@@ -86,8 +86,7 @@
 
 
 % ========== Ficha catalográfica ==========
-% Fazer solicitação no site:
-%	http://www.poli.usp.br/en/bibliotecas/servicos/catalogacao-na-publicacao.html
+\includepdf[pages=-,pagecommand={},width=\textwidth]{ficha.pdf}
 
 
 % ========== Dedicatória (opcional) ==========
@@ -121,22 +120,29 @@ Por fim, agradeço a todo o departamento de Engenharia de Computação e Sistema
 
 % ========== Resumo ==========
 \begin{resumo}
-Ao longo dos anos, o processo das disciplinas de projeto de formatura do PCS ocorre de maneira extremamente manual, com entregas descentralizadas, avaliações em papel, cálculo de notas trabalhoso, entre outras características. O projeto consiste em elaborar um sistema responsável por centralizar e automatizar todo o processo, usando técnicas de Engenharia de Software, além de gerar um legado para a Escola Politécnica.
+Ao longo dos anos, o processo das disciplinas de projeto de formatura do PCS ocorre manualmente, com entregas descentralizadas, avaliações em papel, cálculo de notas trabalhoso, entre outras características que compõem um problema real no curso.
+
+O projeto consiste no uso de técnicas de Engenharia de Software para modelar o processo, levantar as necessidades que compõem o problema e construir um sistema responsável por automatizar o processo levantado, com foco na verificação e validação do produto desenvolvido.
+
+A implementação do sistema usa tecnologias renomadas no mercado e cobre parte dos requisitos levantados, gerando valor para os coordenadores das disciplinas e viabilizando seu uso pelo departamento a partir de 2019, com expectativas de se tornar um legado para a Escola Politécnica.
 %
 \\[3\baselineskip]
 %
-\textbf{Palavras-Chave} -- histórias de usuário, casos de uso, django, testes, validação, visão.
+\textbf{Palavras-Chave} -- modelagem de processos, casos de uso, requisitos, testes, verificação, validação, visão, sistemas web.
 \end{resumo}
 
 
 % ========== Abstract ==========
 \begin{abstract}
+Over the years, the process of the graduation project disciplines of the PCS occurs manually, with decentralized deliveries, paper assessments, calculation of labor notes, among other characteristics that make up a real problem in the course.
 
-Over the years, the process of the graduation project disciplines of the PCS occurs in an extremely manual way, with decentralized deliveries, paper evaluations, calculation of labor notes, among other characteristics. The project consists of elaborating a system responsible for centralizing and automating the entire process, using Software Engineering techniques, in addition to generating a legacy for the Polytechnic School.
+The project consists in the use of software engineering techniques to model the process, to raise the needs that make up the problem and to build a system responsible for automating the raised process, focusing on the verification and validation of the developed product.
+
+The implementation of the system uses renowned technologies in the market and covers part of the requirements raised, generating value for the coordinators of the disciplines and enabling its use by the department from 2019, with expectations of becoming a legacy for the Polytechnic School.
 %
 \\[3\baselineskip]
 %
-\textbf{Keywords} -- user stories, use cases, django, tests, validation, vision.
+\textbf{Keywords} -- process modeling, use cases, requirements, tests, verification, validation, vision, web systems.
 \end{abstract}
 
 
@@ -157,7 +163,7 @@ Over the years, the process of the graduation project disciplines of the PCS occ
 
 \include{aspectos_conceituais}
 
-\include{processos_desenvolvimento}
+\include{processo_desenvolvimento}
 
 \include{especificacao_requisitos_sistema}
 
@@ -175,7 +181,7 @@ Over the years, the process of the graduation project disciplines of the PCS occ
 
 % --- ABNT (requer ABNTeX 2) ---
 %	http://www.ctan.org/tex-archive/macros/latex/contrib/abntex2
-\bibliographystyle{abntex2-num}
+% \bibliographystyle{abntex2-num}
 
 \bibliography{refs}
 

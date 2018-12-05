@@ -2,19 +2,18 @@
 Neste capítulo, serão abordados os principais conceitos relacionados à parte teórica do trabalho: modelagem de processos, representação dos requisitos envolvidos, a engenharia por detrás desses requisitos, suas descrições por meio de casos de uso e histórias de usuário e os conceitos de verificação e validação.
 
 \section{Modelagem de Processos}
-Para entender melhor como o sistema pode atuar em um processo, é valido compreender melhor como funciona esse processo e estabelecer as possíveis fontes de participação do sistema. Esta seção discute um pouco sobre a filosofia de modelar processos e um padrão usado para a modelagem.
+Para entender melhor como o sistema atua no processo, vale compreender como funciona esse processo e estabelecer as possíveis fontes de participação do sistema.
 
-\subsection{Filosofia}
-A modelagem de processos de negócio (ou o \textit{Business Process Modeling} - BPM) existe para entender melhor como está estabelecido o processo como um todo atuando em diversos aspectos: torna o processo mais fluido; evidencia os pontos de aumento da produtividade dos recursos humanos; aloca problemas para as pessoas corretas e; simplifica as regularizações necessárias no processo\cite{mikehavey2015}.
+A modelagem de processos de negócio (ou o \textit{Business Process Modeling} - BPM) existe para entender melhor como está estabelecido o processo como um todo atuando em diversos aspectos: torna o processo mais fluido; evidencia os pontos de aumento da produtividade dos recursos humanos; aloca problemas para as pessoas corretas e; simplifica as regularizações necessárias no processo \cite{mikehavey2015}.
 
-Há duas abordagens para modelagem de um processo, para entender como o sistema atuará\cite{jessicaangeli2018}:
+Há duas abordagens para modelagem de um processo, para entender como o sistema atuará \cite{jessicaangeli2018}:
 
 \begin{itemize}
     \item Antes do sistema (\textit{AS IS}): modelar o processo antes do sistema, para entender como ele atuará para automatizá-lo.
     \item Junto com o sistema (\textit{TO BE}): modelar o processo com o sistema atuante, para evidenciar seus impactos.
 \end{itemize}
 
-Existem ferramentas para representar os processos de negócio, segundo o CBOK \cite[cap. ~3, p. 79]{cbok2013}:
+Existem ferramentas para representar os processos de negócio, segundo o CBOK \cite{cbok2013}:
 
 \begin{itemize}
     \item BPMN (\textit{Business Process Model and Notation})
@@ -25,8 +24,7 @@ Existem ferramentas para representar os processos de negócio, segundo o CBOK \c
     \item \textit{Value Stream Mapping}
 \end{itemize}
 
-\subsection{\textit{Business Process Model and Notation} - BPMN}
-Segundo a \citeauthor{bpmn2013}: 
+Segundo a \citeauthor{bpmn2013} (\citeyear{bpmn2013}, p. 1):
 
 \begin{citacaoLonga}
 "O objetivo do BPMN é fornecer uma notação que seja prontamente compreensível por todos os usuários de negócios, desde os analistas que criam os rascunhos iniciais dos processos, até os desenvolvedores técnicos responsáveis pela implementação da tecnologia que executará esses processos e, finalmente, para os empresários que irão gerenciar e monitorar os processos."
@@ -34,12 +32,12 @@ Segundo a \citeauthor{bpmn2013}:
 
 Ou seja, o propósito do BPMN é unificar a visão dos processos de negócio usando uma notação universal, compreendida por todos os envolvidos que desejam automatizar etapas deste processo.
 
-Segundo a \citeauthor{bpmn2013}, cap. 7, p. 25, o BPMN possui cinco elementos básicos:
+Segundo a \citeauthor{bpmn2013} (\citeyear{bpmn2013}), o BPMN possui cinco elementos básicos:
 
 \begin{itemize}
     \item Objeto de Fluxo: descrevem o comportamento do negócio.
     \item Dados: informações usadas no negócio.
-    \item Conectores: conectam os objetos com outro objetos e/ou informações.
+    \item Conectores: conectam os objetos com outros objetos e/ou informações.
     \item Piscinas e Raias: representam, graficamente, um envolvido no processo.
     \item Artefatos: fornecem informações adicionais sobre os processos.
 \end{itemize}
@@ -48,18 +46,18 @@ Segundo a \citeauthor{bpmn2013}, cap. 7, p. 25, o BPMN possui cinco elementos b�
 Ao se desenvolver um sistema, existem diversas técnicas que podem ser usadas para representar os requisitos. Para este trabalho, duas técnicas foram consideradas: Histórias de Usuário e Casos de Uso.
 
 \subsection{Histórias de Usuário}
-Uma das maneiras de representar os requisitos é a História de Usuário (ou \textit{User Story}). Segundo \citeauthor{jonathanrasmusson}:
+Uma das maneiras de representar os requisitos é a História de Usuário (ou \textit{User Story}). Segundo \citeauthoronline{jonathanrasmusson} (\citeyear{jonathanrasmusson}, p. 98):
 
 \begin{citacaoLonga}
-Descrições curtas das funcionalidades que o nosso cliente
-gostaria de um dia ver em seu software. Elas geralmente são escritas em pequenos cartões de índice (para nos lembrar de não tentar escrever tudo) e estão lá para nos encorajar a ir falar com nossos clientes.
+"Descrições curtas das funcionalidades que o nosso cliente
+gostaria de um dia ver em seu software. Elas geralmente são escritas em pequenos cartões de índice (para nos lembrar de não tentar escrever tudo) e estão lá para nos encorajar a ir falar com nossos clientes."
 \end{citacaoLonga}
 
-O essencial em escrever boas histórias de usuário está em agregar valor para os \textit{stakeholders}. Ou seja, escrever histórias de usuário que tangem assuntos como arquitetura do sistema, linguagem de implementação, padrões de código entre outros não são boas histórias de usuário, pois salvo exceções, o cliente não vê valor em histórias desse tipo\cite{jonathanrasmusson}.
+O essencial em escrever boas histórias de usuário está em agregar valor para os \textit{stakeholders}. Ou seja, escrever histórias de usuário que tangem assuntos como arquitetura do sistema, linguagem de implementação, padrões de código entre outros não são boas histórias de usuário, pois salvo exceções, o cliente não vê valor em histórias desse tipo \cite{jonathanrasmusson}.
 
 Em contrapartida, histórias sobre o comportamento do sistema com valor de produto nelas são histórias de usuário importantes para o processo de desenvolvimento. Muitas vezes, porém, histórias de usuário forçam um viés altamente técnico; nessas situações, cabe buscar a causa raiz que levou à "solução" escrita na história: histórias de usuário apresentam problemas de negócio, e não soluções técnicas.
 
-Um padrão para escrever histórias de usuário\cite{jonathanrasmusson}:
+Um padrão para escrever histórias de usuário \cite[p. ~107]{jonathanrasmusson}:
 
 \begin{citacaoLonga}
 Eu como $<$para quem é a história$>$
@@ -69,7 +67,7 @@ Eu quero $<$o que ele quer$>$
 por causa $<$por que ele quer$>$
 \end{citacaoLonga}
 
-A vantagem de escrever histórias segundo esse modelo é que, naturalmente, elas atendem as características que definem Histórias de Usuário\cite{jonathanrasmusson}:
+A vantagem de escrever histórias segundo esse modelo é que, naturalmente, elas atendem as características que definem Histórias de Usuário \cite{jonathanrasmusson}:
 
 \begin{itemize}
     \item Independentes: elas podem ser implementadas de maneira isolada e distribuída entre a equipe, permitindo maior facilidade para mudanças no projeto (que ocorrem com frequência).
@@ -79,9 +77,9 @@ A vantagem de escrever histórias segundo esse modelo é que, naturalmente, elas
 \end{itemize}
 
 \subsection{Casos de Uso}
-Outra alternativa para documentar o que será desenvolvido no sistema são os casos de uso. Essencialmente, cada caso de uso possui um ou mais atores interagindo com o sistema. Segundo \citeauthor{kurtbittnerianspence2002}, \citeyear{kurtbittnerianspence2002}, cap. 1, p. 20: "Os \textbf{atores} representam as pessoas ou coisas que interagem de alguma forma com o sistema. Já os \textbf{casos de uso} representam as coisas de valor que o sistema executa para os atores."
+Outra alternativa para documentar o que será desenvolvido no sistema são os casos de uso. Essencialmente, cada caso de uso possui um ou mais atores interagindo com o sistema. Segundo \citeauthoronline{kurtbittnerianspence2002} (\citeyear{kurtbittnerianspence2002}, p. 20): "Os \textbf{atores} representam as pessoas ou coisas que interagem de alguma forma com o sistema. Já os \textbf{casos de uso} representam as coisas de valor que o sistema executa para os atores."
 
-Para escrever casos de uso, foi usada uma estrutura retirada de \citeauthor{ibm2011}, \citeyear{ibm2011}:
+Para escrever casos de uso, foi usada a seguinte estrutura \cite{ibm2011}:
 
 \begin{enumerate}
     \item Nome: nome do Caso de Uso
@@ -100,19 +98,17 @@ Para escrever casos de uso, foi usada uma estrutura retirada de \citeauthor{ibm2
 
 Resumindo, o caso de uso é uma descrição comportamental da funcionalidade descrita, servindo de contrato estabelecido de desenvolvimento do sistema.
 
-Além da representação textual, há também o uso de representações gráficas de casos de uso. A representação gráfica apresenta o nome do caso de uso e os atores que interagem com ele, mas omite sua parte descritiva. Tais padrões de representação são definidos pela UML\cite{uml2017}.
+Além da representação textual, há também o uso de representações gráficas de casos de uso. A representação gráfica apresenta o nome do caso de uso e os atores que interagem com ele, mas omite sua parte descritiva. Tais padrões de representação são definidos pela UML \cite{uml2017}.
 
 \section{Requisitos}
-Segundo o \citeauthor{ieeecomputersociety2014}: "Um requisito de software é uma propriedade que representa algo para resolver algum problema no mundo real."
-
-Existem dois tipos de requisitos de software, definidos pelo \citeauthor{ieeecomputersociety2014}, cap. 1, p. 3:
+Segundo o \citeauthor{ieeecomputersociety2014} (\citeyear{ieeecomputersociety2014}, cap. 1, p. 1): "Um requisito de software é uma propriedade que representa algo para resolver algum problema no mundo real." Existem dois tipos de requisitos de software, definidos pelo \citeauthor{ieeecomputersociety2014} (\citeyear{ieeecomputersociety2014}, cap. 1, p. 3):
 
 \begin{itemize}
     \item Funcionais: descrevem as funcionalidades executadas pelo software.
     \item Não-funcionais: definem qualidades do software ou restringem seu funcionamento.
 \end{itemize}
 
-Para encontrá-los, existe um exemplo de processo básico, definido em \citeauthor{kurtbittnerianspence2002} \citeyear{kurtbittnerianspence2002}, cap. 6, p. 248-249:
+Para encontrá-los, existe um exemplo de processo básico, definido pelo \citeauthoronline{kurtbittnerianspence2002} (\citeyear{kurtbittnerianspence2002}, cap. 6, p. 248-249):
 
 \begin{itemize}
     \item Estabelecimento da Visão: unificação do entendimento do sistema, por meio do Documento Visão.
@@ -122,14 +118,14 @@ Para encontrá-los, existe um exemplo de processo básico, definido em \citeauth
     \item Revisão dos Casos de Uso: revisão dos casos de uso escritos, para garantir que a parte da a ideia do sistema está representada na especificação.
 \end{itemize}
 
-Vale lembrar que, segundo \citeauthor{kurtbittnerianspence2002}, "Todos os requisitos funcionais podem ser capturados como casos de uso, e muitos dos requisitos não funcionais podem ser associados a casos de uso."
+Vale lembrar que os requisitos funcionais são representados pelos casos de uso e os requisitos não funcionais são ligados aos casos de uso escritos \cite{kurtbittnerianspence2002}.
 
-Além disso, os casos de uso podem capturar um bom subconjunto dos requisitos funcionais do sistema. Em situações de requisitos ainda não representados pelos casos de uso, eles são capturados por especificações suplementares, definidas pela \citeauthor{ibm2011}\cite[cap. ~1, p. ~23]{kurtbittnerianspence2002}.
+Além disso, os casos de uso podem capturar um subconjunto dos requisitos funcionais do sistema. Em situações de requisitos ainda não representados pelos casos de uso, eles são capturados por especificações suplementares, definidas pela \citeauthor{ibm2011} \cite{kurtbittnerianspence2002}.
 
 \subsection{Definição dos \textit{Stakeholders}}
-Inicialmente, para melhor entender quem será afetado com a existência de um sistema, é necessário encontrar quem são essas pessoas ou grupos. Para isso, existe o conceito de \textit{stakeholders}. Segundo \citeauthor{kurtbittnerianspence2002}, cap. 3, p. 88: "Indivíduo que é materialmente afetado pelo resultado do sistema ou o(s) projeto(s) que produzem o sistema."
+Inicialmente, para melhor entender quem será afetado com a existência de um sistema, é necessário encontrar quem são essas pessoas ou grupos. Para isso, existe o conceito de \textit{stakeholders}. Segundo \citeauthoronline{kurtbittnerianspence2002} (\citeyear{kurtbittnerianspence2002}, p. 88): "É o indivíduo que é materialmente afetado pelo resultado do sistema ou o(s) projeto(s) que produzem o sistema."
 
-Ou seja, \textit{stakeholders} não são apenas os indivíduos que efetivamente usarão o sistema, mas sim todos os impactados com sua existência. Dividem-se em:
+Ou seja, \textit{stakeholders} não são apenas os indivíduos que efetivamente usarão o sistema, mas sim todos os impactados com sua existência. São divididos em:
 
 \begin{itemize}
     \item Usuários: as pessoas que efetivamente usarão o sistema.
@@ -140,7 +136,7 @@ Ou seja, \textit{stakeholders} não são apenas os indivíduos que efetivamente 
 \end{itemize}
 
 \subsection{Entendimento dos Problemas}
-Uma vez mapeado os \textit{stakeholders}, cabe entender as dores que cada um possui e o que eles esperam com o produto final a ser desenvolvido. Alguns processos sugeridos pelo \citeauthor{kurtbittnerianspence2002}:
+Uma vez mapeado os \textit{stakeholders}, cabe entender as dores que cada um possui e o que eles esperam com o produto final a ser desenvolvido. Alguns processos sugeridos pelo \citeauthoronline{kurtbittnerianspence2002} (\citeyear{kurtbittnerianspence2002}):
 
 \begin{itemize}
     \item Entrevistas: entrevistar os \textit{stakeholders} e entender diretamente quais são suas dores e expectativas.
@@ -157,7 +153,7 @@ Com essa listagem de problemas levantados, o próximo passo é construir a visã
 \subsection{Documento Visão}
 O Documento Visão é o responsável por unificar as visões de todos os \textit{stakeholders} do sistema, centralizando todas as expectativas e definindo o escopo macro do projeto. Nele também deve constar as justificativas necessárias para a construção do sistema, explicitando possíveis concorrentes e os diferenciais do produto a ser desenvolvido.
 
-Existem diversos modelos de Documento Visão. Um modelo de referência encontrado em \citeauthor{kurtbittnerianspence2002}, \citeyear{kurtbittnerianspence2002}, cap. 3, p. 135-136:
+Existem diversos modelos de Documento Visão. Um modelo de referência \cite{kurtbittnerianspence2002}:
 
 \begin{enumerate}
     \item Posicionamento: Como o sistema irá se posicionar no quesito de negócios? Há concorrentes que já resolvem o problema? Quais são seus diferenciais em relação a eles?
@@ -169,15 +165,15 @@ Existem diversos modelos de Documento Visão. Um modelo de referência encontrad
 \end{enumerate}
 
 \section{Verificação e Validação}
-Durante o desenvolvimento, faz parte do processo garantir a qualidade do que está sendo entregue. Para isso, existem os processos de verificação e validação, que segundo o \citeauthor{ieeecomputersociety2014}, \citeyear{ieeecomputersociety2014}, cap. 10, p. 6: "Servem para ajudar a equipe de desenvolvimento a garantir qualidade no sistema por todo seu ciclo de vida."
+Durante o desenvolvimento, faz parte do processo garantir a qualidade do que está sendo entregue. Para isso, existem os processos de verificação e validação, que segundo o \citeauthor{ieeecomputersociety2014} (\citeyear{ieeecomputersociety2014}, cap. 10, p. 6): "Servem para ajudar a equipe de desenvolvimento a garantir qualidade no sistema por todo seu ciclo de vida."
 
-Ao se desenvolver um software, é uma boa prática acompanhar se os requisitos funcionais e não funcionais estão sendo atendidos, de preferência com acompanhamento das métricas determinadas nos requisitos. Essa prática é conhecida como verificação, definida de maneira resumida pela seguinte pergunta\cite[cap. ~10, p. ~6]{ieeecomputersociety2014}: "Estamos construindo o produto corretamente?"
+Ao se desenvolver um software, é uma boa prática acompanhar se os requisitos funcionais e não funcionais estão sendo atendidos, de preferência com acompanhamento das métricas determinadas nos requisitos. Essa prática é conhecida como verificação, definida de maneira resumida pela seguinte pergunta presente no \citeauthor{ieeecomputersociety2014} (\citeyear{ieeecomputersociety2014}, cap. 10, p. 6): "Estamos construindo o produto corretamente?"
 
-Além de acompanhar os requisitos propostos, é importante entender se o sistema está de acordo com as expectativas operacionais dos \textit{stakeholders}. Essa análise constante de adequação voltada aos negócios é conhecida como validação, definida pela seguinte questão\cite[cap. ~10, p. ~6]{ieeecomputersociety2014}: "Estamos construindo o produto correto?"
+Além de acompanhar os requisitos propostos, é importante entender se o sistema está de acordo com as expectativas operacionais dos \textit{stakeholders}. Essa análise constante de adequação voltada aos negócios é conhecida como validação, definida pela seguinte questão do \citeauthor{ieeecomputersociety2014} (\citeyear{ieeecomputersociety2014}, cap. 10, p. 6): "Estamos construindo o produto correto?"
 
 \subsection{Testes}
-Em ambos os casos descritos acima, são necessárias técnicas para detectar erros e manter a consistência do que já foi entregue. Para isso, existe o conceito de testes, definido no \citeauthor{ieeecomputersociety2014}, \citeyear{ieeecomputersociety2014}, cap. 4, p. 1: "Consiste na verificação dinâmica de que um programa fornece comportamentos esperados em um conjunto finito de casos de teste, selecionados adequadamente a partir do domínio de execução, geralmente infinito."
+Em ambos os casos descritos acima, são necessárias técnicas para detectar erros e manter a consistência do que já foi entregue. Para isso, existe o conceito de testes, definido no \citeauthor{ieeecomputersociety2014}  (\citeyear{ieeecomputersociety2014}, cap. 4, p. 1): "Consiste na conferência dinâmica de que um programa fornece comportamentos esperados em um conjunto finito de casos de teste, selecionados adequadamente a partir do domínio de execução, geralmente infinito."
 
 Na escala macroscópica, há os testes de aceitação junto aos \textit{stakeholders}, para validar as entregas. Já para testar a arquitetura, costumam ser realizados testes de sistema. Para testar os componentes desenvolvidos do sistema, realizam-se testes de integração entre esses componentes. E, por fim, o código escrito para cada componente elaborado é testado pelos testes de unidade.
 
-Ao desenvolver um sistema, uma boa prática é executar a suíte de testes construída a cada nova funcionalidade adicionada e/ou modificada. Para isso, existe a filosofia de testes automatizados, que são códigos escritos responsáveis por rodar um subconjunto de testes da suíte escolhida. A vantagem dessa filosofia está em reduzir o esforço de trabalho como um todo, dado que é mais custoso refatorar código não-testado problemático do que elaborar as funcionalidades com os testes inclusos\cite[cap. ~3, p. 19-21]{gerardmeszaros2007}.
+Ao desenvolver um sistema, uma boa prática é executar a suíte de testes construída a cada nova funcionalidade adicionada e/ou modificada. Para isso, existe a filosofia de testes automatizados, que são códigos escritos responsáveis por rodar um subconjunto de testes da suíte escolhida. A vantagem dessa filosofia está em reduzir o esforço de trabalho como um todo, dado que é mais custoso refatorar código não-testado problemático do que elaborar as funcionalidades com os testes inclusos \cite{gerardmeszaros2007}.

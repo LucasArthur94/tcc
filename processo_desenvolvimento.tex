@@ -1,5 +1,5 @@
-\chapter{Processos de Desenvolvimento}\label{chap:processos-desenvolvimento}
-Neste capítulo, serão discutidos os processos de levantamento de requisitos, a divisão do desenvolvimento em iterações e as reuniões de validação com os principais \textit{stakeholders}.
+\chapter{Processo de Desenvolvimento}\label{chap:processo-desenvolvimento}
+Neste capítulo, serão discutidos processos de levantamento de requisitos, a divisão do desenvolvimento em iterações, o processo de desenvolvimento, testes e as reuniões de validação com os principais \textit{stakeholders}.
 
 \section{Levantamento de Requisitos}
 Para o levantamento de requisitos, foram realizadas entrevistas com os \textit{stakeholders} para entender melhor qual é o processo atual, as necessidades encontradas e como o sistema irá ajudar nelas.
@@ -9,14 +9,15 @@ A primeira etapa do processo foi a realização de entrevistas com os principais
 
 Seguindo os conceitos do capítulo \ref{chap:aspectos-conceituais}, ocorreram entrevistas com os \textit{stakeholders} como forma de levantar requisitos. Por meio dessas entrevistas, o processo geral de negócio (\textit{AS IS}) foi modelado usando BPMN.
 
-Após a modelagem, teve início a construção do Documento Visão, usando como base o processo recém modelado. Com a finalização do Documento Visão, resta entender qual ferramenta convém para a representação de requisitos do sistema.
+Após a modelagem, teve início a construção do Documento Visão, usando como base o processo recém modelado. Com a finalização do Documento Visão, resta entender como será feita a representação de requisitos do sistema.
 
 \subsection{Casos de Uso e Histórias de Usuário}
 Realizando um comparativo entre casos de uso e histórias de usuário, tomando como base os conceitos expostos no capítulo \ref{chap:aspectos-conceituais}:
 
 \begin{itemize}
-    \item Casos de uso tendem a ser maiores, mais burocráticos e detalhados, ao invés de histórias de usuário, que são mais modulares, simples e flexíveis.
-    \item Histórias de usuário demandam maior participação dos \textit{stakeholders}, dada sua maior simplicidade, diferentemente dos casos de uso que, por serem mais completos, servem como base contratual sobre como o sistema deve ser construído.
+    \item Casos de uso tendem a ser maiores, mais detalhados, documentando o requisito em detalhe. Já as histórias de usuário são mais modulares e simples, com os detalhes conversados ao longo do projeto, junto com os \textit{stakeholders}.
+    \item Casos de uso demandam tempo dos \textit{stakeholders} apenas durante a atividade de levantamento de requisitos (caso não tenha problemas na especificação), já as histórias de usuário, demandam tempo dos \textit{stakeholders} durante a implementação, para se obter mais informações sobre as histórias. 
+Casos de uso documentam os requisitos em detalhes, enquanto que não há essa documentação nas histórias do usuário. Os detalhes da história são conversados entre as partes.
 \end{itemize}
 
 Tomando como base essas diferenças, a solução adotada foram os casos de uso, dada a escassez de tempo de muitos dos \textit{stakeholders}, o que dificultaria bastante o desenvolvimento do sistema com o uso de histórias de usuário.
@@ -36,7 +37,7 @@ Nesta seção, será explicado um pouco mais sobre ambientes de validação e co
 
 Para desenvolvimento de sistemas, são criados diversos ambientes de aplicação, para testar as funcionalidades com os diversos \textit{stakeholders}, de acordo com a complexidade de negócios do projeto.
 
-Em geral, são três ambientes de aplicação para realizar os processos de validação do sistema, permitindo testes isolados dos \textit{stakeholders}, sem afetar o fluxo de desenvolvimento. São eles\cite{tracyragan2017}:
+Em geral, são três ambientes de aplicação para realizar os processos de validação do sistema, permitindo testes isolados dos \textit{stakeholders}, sem afetar o fluxo de desenvolvimento. São eles \cite{tracyragan2017}:
 
 \begin{itemize}
     \item Desenvolvimento: onde geralmente fica a versão mais recente da aplicação, com as novas funcionalidades desenvolvidas e testadas já integradas no ambiente. Essa versão serve como uma prévia do que será entregue para homologação. As mudanças nesse ambiente são mais frequentes, dado que uma nova funcionalidade completa já pode ir para este ambiente.
@@ -45,3 +46,6 @@ Em geral, são três ambientes de aplicação para realizar os processos de vali
 
     \item Produção: este ambiente é onde o sistema irá rodar, de fato. Ele deve ser o mais estável possível, com alterações apenas homologadas pelos \textit{stakeholders}. Salvo raras exceções, como falhas e problemas encontrados, nada deve ser colocado aqui sem a aprovação no ambiente de homologação.
 \end{itemize}
+
+\section{Processo de Desenvolvimento e Testes}
+Para o processo de desenvolvimento, com os casos de uso definidos e organizados, não há um processo formal, dado o fato da equipe de desenvolvimento ser constituída de apenas um integrante. Cada caso de uso tem seu fluxo básico desenvolvido, junto com os testes relacionados e, ao final do processo, a funcionalidade é enviada para o ambiente de desenvolvimento na nuvem, para testes mais próximos do ambiente de produção.

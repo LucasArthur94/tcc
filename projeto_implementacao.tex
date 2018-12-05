@@ -1,5 +1,5 @@
 \chapter{Projeto e Implementação}\label{chap:projeto-implementacao}
-Este capítulo aborda, com mais detalhes, a parte de projeto e implementação do sistema, com base nos requisitos já levantados, passando pelas tecnologias envolvidas e pela arquitetura do sistema. Além disso, passa pelas etapas que ocorreram, com base no processo levantado no capítulo \ref{chap:metodologia-trabalho}.
+Este capítulo aborda o projeto e a implementação do sistema, com base nos requisitos já levantados, passando pelas tecnologias envolvidas e pela arquitetura do sistema. Além disso, passa pelas etapas que ocorreram, com base no processo comentado no capítulo \ref{chap:processo-desenvolvimento}.
 
 \section{Elaboração e Estrutura do Sistema}
 Inicialmente, para levantar os casos de uso, foram realizadas diversas entrevistas com os \textit{stakeholders}. A entrevista inicial ocorreu no dia 12/03, com os coordenadores da disciplinas de projeto de formatura: Prof. Dr. João Batista e Prof. Dr. Paulo Cugnasca. Nessa reunião, também teve a participação do Prof. Dr. Fabio Levy Siqueira. Esta entrevista teve dois focos: determinar o processo geral das disciplinas de formatura e encontrar os demais envolvidos que podem ser entrevistados.
@@ -8,7 +8,7 @@ Após a primeira entrevista, ocorreram outras conversas entre os demais envolvid
 
 \begin{itemize}
     \item Nilton: responsável técnico dos eventos de banca teórica e feira prática. Evidenciou as necessidades técnicas que possui nos dois dias de evento e deu sugestões de como o sistema pode ajudar em seu trabalho.
-    \item Fabio Levy: assumiu três papéis, por motivos de dificuldade de agenda: Responsável pela infraestrutura de hospedagem, professor orientador e avaliador técnico. Mostrou com mais detalhes o processo como um todo, mas da visão de docente, as participações durante a orientação e a entrega do trabalho de formatura. Além disso, determinou algumas restrições de construção e da infraestrutura do projeto.
+    \item Fabio Levy: assumiu três papéis, por motivos de dificuldade de agenda, sendo responsável pela infraestrutura de hospedagem, professor orientador e avaliador técnico. Mostrou com mais detalhes o processo como um todo, mas da visão de docente, as participações durante a orientação e a entrega do trabalho de formatura. Além disso, determinou algumas restrições de construção e da infraestrutura do projeto.
 \end{itemize}
 
 Após cada entrevista, o processo \textit{AS IS} foi revisto e refinado, obtendo como resultado os diagramas do apêndice \ref{chap:bpmn-appendix}. Com base nesses diagramas, foram construídos os casos de uso do sistema, detalhados no apêndice \ref{chap:use-case-appendix}). 
@@ -49,7 +49,7 @@ Os casos de uso implementados foram divididos em duas iterações: uma responsá
     \label{fig:use-case-recursos}
 \end{figure}
 
-Com os diagramas de caso de uso, agora há a descrição dos casos de uso implementados, divididos por iteração:
+Nas figuras \ref{fig:use-case-atv}, \ref{fig:use-case-ev-ava} e \ref{fig:use-case-recursos}, são apresentados os casos de uso definidos e implementados do sistema, agrupados de acordo com os casos de uso em comum, para facilitar a visualização: atividades, eventos e avaliações e recursos. 
 
 \begin{itemize}
     \item Primeira Iteração - Julho/Setembro
@@ -104,20 +104,24 @@ Há também os casos de uso não implementados do sistema, levantados como persp
     \label{fig:use-case-infra}
 \end{figure}
 
+Nas figuras \ref{fig:use-case-bib} e \ref{fig:use-case-infra}, são apresentados os casos de uso não implementados do sistema, também agrupados de acordo com os casos de uso em comum: base de dados (projetos anteriores e busca) e infraestrutura (recursos necessários para os eventos). 
+
 \section{Arquitetura e Tecnologias Utilizadas}
+
+A figura \ref{fig:arch} ilustra a arquitetura básica do sistema, composta por quatro componentes básicas: a aplicação em si (Django), o banco de dados principal (PostgreSQL), o banco de dados para cache (Redis) e o banco de dados de arquivos submetidos (Google Drive). O uso de três bancos distintos ocorre pelo fato de um dos requisitos, levantados pelos casos de uso, definir o Google Drive como banco de dados de arquivos, para não sobrecarregar o banco principal. Além disso, por questões de desempenho, informações menores são armazenadas no banco de dados de cache, escolhendo o Redis como solução. A aplicação, o banco de dados principal e o banco de dados de cache estão hospedados no serviço de nuvem Heroku.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.4]{arquitetura.png}
+    \includegraphics[scale=0.55]{arquitetura.png}
     \caption{Arquitetura Básica do Sistema}
     \label{fig:arch}
 \end{figure}
 
-É comum, em desenvolvimento de sistemas, usar soluções prontas como forma de simplificar o desenvolvimento de soluções. Essas soluções são conhecidas como arcabouços (ou \textit{frameworks}), definidos por \citeauthor{iansommerville2011} como: "uma estrutura genérica estendida para se criar uma aplicação ou subsistema mais específico". Para este projeto, foi usado um \textit{framework}, em linguagem Python, chamado \textbf{Django}. Sua escolha foi pautada na Manutenibilidade, levantada no capítulo \ref{chap:especificacao-requisitos-sistema}, dado que alunos farão a manutenção do projeto e que Python, além de ser mais alto nível, é ensinada no primeiro ano dos cursos de Engenharia da Poli.
+É comum, em desenvolvimento de sistemas, usar soluções prontas como forma de simplificar o desenvolvimento de soluções. Essas soluções são conhecidas como arcabouços (ou \textit{frameworks}), definidos por \citeauthoronline{iansommerville2011} (\citeyear{iansommerville2011}, p. 300) como: "uma estrutura genérica estendida para se criar uma aplicação ou subsistema mais específico". Para este projeto, foi usado um \textit{framework}, em linguagem Python, chamado \textbf{Django}. Sua escolha foi pautada na Manutenibilidade, levantada no capítulo \ref{chap:especificacao-requisitos-sistema}, dado que alunos farão a manutenção do projeto e que Python, além de ser mais alto nível, é ensinada no primeiro ano dos cursos de Engenharia da Poli.
 
 O Django é estruturado em aplicações (apps), onde cada aplicação corresponde a uma parte do sistema, geralmente independente e reciclável (ou seja, pode ser usada em aplicações Django diferentes). Cada aplicação segue o padrão \textit{Model-View-Controller}.
 
-O padrão \textit{Model-View-Controller} - MVC é um padrão arquitetural para organizar os componentes da aplicação. Ele é dividido em três grandes grupos\cite{thedjangobook2018}:
+O padrão \textit{Model-View-Controller} - MVC é um padrão arquitetural para organizar os componentes da aplicação. Ele é dividido em três grandes grupos \cite{thedjangobook2018}:
 
 \begin{itemize}
     \item Modelo (\textit{Model}): fonte de informação, contendo os dados da aplicação, é onde geralmente fica a lógica de negócio.
@@ -127,9 +131,9 @@ O padrão \textit{Model-View-Controller} - MVC é um padrão arquitetural para o
 
 A vantagem do padrão está no fluxo de dados que existe entre os grupos, além de evitar códigos com funcionalidades diferentes em lugares errados, como, por exemplo, lógica de negócio na camada de apresentação.
 
-Já para a hospedagem, foi usado como apoio o Heroku, um serviço de plataforma (\textit{Platform as a Service} - \textbf{PaaS}) de computação em nuvem conhecida no mercado, com a possibilidade de subir aplicações nas linguagens Ruby, Node.js, Java, Python, Clojure, Scala, Go e PHP. O Heroku foi escolhido pela facilidade em subir uma aplicação gratuitamente, o que possibilita testar e validar ideias básicas. A estrutura básica do Heroku funciona com o uso de \textit{dynos}, que são pequenas máquinas tanto para hospedar sua aplicação principal quanto outras auxiliares para serviços externos e/ou paralelos. Resumidamente, ele possui um plano básico gratuito que possibilita testar aplicações de maneira fácil e sem dificuldades de expansão e, se desejar, há máquinas de performance superior, cobradas com base no conceito de \textit{dynos}-hora.
+Já para a hospedagem foi usado como apoio o Heroku, um serviço de plataforma (\textit{Platform as a Service} - \textbf{PaaS}) de computação em nuvem conhecida no mercado, com a possibilidade de subir aplicações nas linguagens Ruby, Node.js, Java, Python, Clojure, Scala, Go e PHP. O Heroku foi escolhido pela facilidade em subir uma aplicação gratuitamente, o que possibilita testar e validar ideias básicas. A estrutura básica do Heroku funciona com o uso de \textit{dynos}, que são pequenas máquinas tanto para hospedar sua aplicação principal quanto outras auxiliares para serviços externos e/ou paralelos. Resumidamente, ele possui um plano básico gratuito que possibilita testar aplicações de maneira fácil e sem dificuldades de expansão e, se desejar, há máquinas de performance superior, cobradas com base no conceito de \textit{dynos}-hora.
 
-Mesmo com um dos requisitos sendo a hospedagem em um serviço de nuvem da USP, para realizar as outras etapas dos demais ambientes de desenvolvimento citados no capítulo \ref{chap:metodologia-trabalho}, foram usados três ambientes do Heroku, com os seguintes domínios:
+Vale lembrar que um dos requisitos definidos no capitulo \ref{chap:especificacao-requisitos-sistema} é a hospedagem da aplicação em um serviço de nuvem da USP. Por motivos de tempo e limitações de recursos (dado que não havia, à disposição, mais do que uma máquina, dado os ambientes de validação citados no capítulo \ref{chap:processo-desenvolvimento}), foram usados três ambientes do Heroku, com os seguintes domínios:
 
 \begin{itemize}
     \item Desenvolvimento: \href{https://tccapp-next-release.herokuapp.com}{https://tccapp-next-release.herokuapp.com}
@@ -137,12 +141,14 @@ Mesmo com um dos requisitos sendo a hospedagem em um serviço de nuvem da USP, p
     \item Produção: \href{https://tccapp-production.herokuapp.com}{https://tccapp-production.herokuapp.com}
 \end{itemize}
 
-O Django foi usado na versão mais recente estável (2.1), que corrigiu algumas novidades da versão 2.0. É esta versão que foi usada pelo projeto em questão, dado que é estável e possui suporte de apoio da equipe até Dezembro de 2020\cite{djangodownload}. Ele usa, como padrão, o SQLite, o que atendeu bem durante o desenvolvimento. Já o Heroku tem como banco de dados padrão o PostgreSQL, o que exigiu o chaveamento entre os bancos no ambiente local de desenvolvimento e os ambientes de validação hospedados no serviço. Por isso, o projeto possui configurado dois pacotes de gerenciamento de banco de dados, um para SQLite (nativo do Django), outro para PostgreSQL (o Psycopg\cite{lucassouto2017}).
+A migração futura para ambientes da USP não será um problema de alto impacto, dado que, em ambas as máquinas, o ambiente roda sistemas operacionais baseados em Linux.
+
+O Django foi usado na versão mais recente estável (2.1), que corrigiu algumas novidades da versão 2.0 e possui suporte de apoio da equipe até Dezembro de 2020 \cite{djangodownload}. Ele usa, como padrão, o SQLite, o que atendeu bem durante o desenvolvimento. Já o Heroku tem como banco de dados padrão o PostgreSQL, o que exigiu o chaveamento entre os bancos no ambiente local de desenvolvimento e os ambientes de validação hospedados no serviço. Por isso, o projeto possui configurado dois pacotes de gerenciamento de banco de dados, um para SQLite (nativo do Django), outro para PostgreSQL (o Psycopg \cite{lucassouto2017}).
 
 Em relação aos acessos do sistema, o Django possui uma limitação (caso use o serviço nativo de login): apenas um \textit{model} pode realizar o acesso. Como são múltiplos atores, para contornar a limitação, cada pessoa terá um único usuário, com vários perfis diferentes de acesso, cada qual com suas permissões e ações. São quatro perfis implementados: estudante, docente, convidado e coordenador. Cada usuário pode ter um ou mais perfis de acesso simultâneos (é o caso, por exemplo, dos coordenadores da disciplina, que também são docentes e podem orientar e avaliar projetos).
 
 \subsection{Aplicações Construídas}
-O Django possui uma filosofia em sua documentação\cite{djangodocs}: "Uma aplicação é um aplicativo da Web que faz alguma coisa - por exemplo, um sistema de blog, um banco de dados de registros públicos ou um aplicativo de pesquisa simples. Um projeto é uma coleção de configurações e aplicações para um site específico." Seguindo essa filosofia definida, o sistema foi estruturado em aplicações menores \textit{apps}, cada qual com sua responsabilidade:
+O Django possui uma filosofia em sua documentação \cite{djangodocs}: "Uma aplicação é um aplicativo da Web que faz alguma coisa - por exemplo, um sistema de blog, um banco de dados de registros públicos ou um aplicativo de pesquisa simples. Um projeto é uma coleção de configurações e aplicações para um site específico." Seguindo essa filosofia, o sistema foi estruturado em aplicações menores (\textit{apps}), cada qual com sua responsabilidade:
 
 \begin{itemize}
     \item home: aplicação responsável por gerenciar as funções básicas a todos os usuários, como por exemplo login/logout, o conteúdo da página de entrada, entre outros.
@@ -159,38 +165,38 @@ O Django possui uma filosofia em sua documentação\cite{djangodocs}: "Uma aplic
     \item score: gerencia as notas finais calculadas para cada situação, por grupo de trabalho.
 \end{itemize}
 
-Com as aplicações estabelecidas, os dados foram organizados na arquitetura de banco de dados a seguir:
+Com as aplicações estabelecidas, os dados foram organizados na arquitetura de banco de dados, exibida na figura \ref{fig:erd}.
 
-\begin{figure}[H]
+\begin{figure}[!htpb]
     \centering
     \includegraphics[angle=90, origin=c, scale=0.65]{imagens/erd.png}
-    \caption{Diagrama Entidade-Relacionamento em Nível Lógico do Sistema Desenvolvido, usando Notação de Pé de Galinha}
+    \caption{Diagrama Entidade-Relacionamento em Nível Lógico do Sistema Desenvolvido}
     \label{fig:erd}
 \end{figure}
 
-Para a navegação de telas, foram construídos diagramas de navegação simples, exibindo a arquitetura de informação do sistema para cada perfil de usuário:
+Para a navegação de telas, foram construídos diagramas de navegação simples, nas figuras \ref{fig:telas-aluno}, \ref{fig:telas-staff} e \ref{fig:telas-coordenador}, exibindo a arquitetura de informação do sistema para cada perfil de usuário.
 
-\begin{figure}[H]
+\begin{figure}[!htpb]
     \centering
-    \includegraphics[scale=1]{imagens/telas_aluno.png}
+    \includegraphics[scale=1.3]{imagens/telas_aluno.png}
     \caption{Diagrama de Navegação de Telas Simplificado para o perfil de Aluno}
     \label{fig:telas-aluno}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!htpb]
     \centering
-    \includegraphics[scale=1]{imagens/telas_staff.png}
-    \caption{Diagrama de Navegação de Telas Simplificado para o perfis de Docente e Convidado}
+    \includegraphics[scale=1.1]{imagens/telas_staff.png}
+    \caption{Diagrama de Navegação de Telas Simplificado para o perfis de Docente e Convidado (\textit{Staff})}
     \label{fig:telas-staff}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[!htpb]
     \centering
-    \includegraphics[angle=90, origin=c,scale=0.7]{imagens/telas_coordenador.png}
+    \includegraphics[angle=90, origin=c,scale=0.8]{imagens/telas_coordenador.png}
     \caption{Diagrama de Navegação de Telas Simplificado para o perfil de Coordenador}
     \label{fig:telas-coordenador}
 \end{figure}
 
-De forma a evitar excesso de conteúdo no trabalho, todo o código presente está em um repositório público na plataforma de controle de versão GitHub, onde também se encontram detalhes mais técnicos sobre como realizar manutenções no sistema e como rodar na máquina do desenvolvedor: \href{https://github.com/LucasArthur94/tccapp}{https://github.com/LucasArthur94/tccapp}.
+O código presente está em um repositório público na plataforma de controle de versão GitHub, onde também se encontram detalhes mais técnicos sobre como realizar manutenções no sistema e como rodar na máquina do desenvolvedor: \href{https://github.com/LucasArthur94/tccapp}{https://github.com/LucasArthur94/tccapp}.
 
-Há também, no anexo \ref{chap:user-manual-appendix}, um pequeno manual de instruções de uso do sistema, com algumas capturas de tela para ilustrar o fluxo de navegação para os diversos atores.
+Há também, no apêndice \ref{chap:user-manual-appendix}, um pequeno manual de instruções de uso do sistema, com algumas capturas de tela para ilustrar o fluxo de navegação para os diversos atores.

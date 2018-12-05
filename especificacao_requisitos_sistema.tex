@@ -1,8 +1,8 @@
 \chapter{Especificação de Requisitos do Sistema}\label{chap:especificacao-requisitos-sistema}
-Neste capítulo, serão abordados os requisitos do sistema encontrados, os pontos levantados nas diversas reuniões e os requisitos funcionais e não funcionais encontrados. Vale lembrar que, no apêndice \href{chap:vision-doc-appendix}, há maiores detalhes sobre o resultado geral do processo de levantamento de requisitos.
+Neste capítulo, serão abordados os requisitos do sistema encontrados, os pontos levantados nas diversas reuniões e os requisitos funcionais e não funcionais encontrados.
 
 \section{Visão do Sistema}
-De acordo com o capítulo \ref{chap:aspectos-conceituais}, o documento visão é responsável por unificar o entendimento do sistema para os \textit{stakeholders}. Seguindo a estrutura sugerida no capítulo \ref{chap:aspectos-conceituais}, o sistema foi descrito.
+De acordo com o capítulo \ref{chap:aspectos-conceituais}, o documento visão é responsável por unificar o entendimento do sistema para os \textit{stakeholders}.
 
 \subsection{Descrição do Problema}
 Os problemas estão na descentralização do processo, com os orientadores participando por intermédio de seus orientados, além da parte manual de construção de eventos e de avaliações das bancas. O impacto direto é na demora e esforço para calcular notas, dificuldade de integração entre envolvidos (orientador, alunos e coordenação). Para resolver o problema, o sistema deve automatizar o processo e integrar os envolvidos ao longo das disciplinas.
@@ -11,7 +11,7 @@ Os problemas estão na descentralização do processo, com os orientadores parti
     \centering
     \caption{Sentença básica de posição do produto}
     \label{sentenca-posicao}
-    \resizebox{\textwidth}{!}{\begin{tabular}{|l|l|lll}
+    \resizebox{480pt}{!}{\begin{tabular}{|l|l|lll}
         \cline{1-2}
         Para            & alunos, orientadores, coordenadores e técnicos                                                                  &  &  &  \\ \cline{1-2}
         Que             & cursam ou estão envolvidos diretamente                                                            &  &  &  \\ \cline{1-2}
@@ -61,12 +61,21 @@ Para o processo em questão, podemos reforçar alguns pontos importantes:
     \item Além disso, há o site do departamento, onde ficam as monografias mais recentes, também como simples repositório de arquivos.
 \end{itemize}
 
+\subsection{Alternativas e Concorrência}
+Também foram estudados alguns concorrentes do produto, de maneira a compreender se eles não seriam soluções para as necessidades levantadas:
+
+\begin{itemize}
+    \item Tidia-AE: entregas pontuais, com acesso apenas aos integrantes do grupo e aos coordenadores da disciplina. Os orientadores ficam de fora das entregas principais, cabendo aos alunos realizarem essa comunicação de maneira extra-oficial.
+    \item Moodle: plataforma aberta conhecida no mercado para gerenciamento de disciplinas em geral. Serve para construir grupos e até incluir orientadores, porém não é uma alternativa simples e não possui funcionalidades de busca avançada.
+    \item Site PCS (Wordpress): apenas resultado final, de maneira pública, sem integração dos envolvidos no projeto.
+\end{itemize}
+
 \subsection{Principais Necessidades}
 Diversas necessidades foram encontradas, sendo agrupadas, estudadas e propostas soluções para atendê-las:
 
-\begin{table}[!htb]
+\begin{sidewaystable}[!htbp]
   \centering
-  \caption{Necessidades encontradas}
+  \caption{Principais necessidades encontradas}
   \label{necessidades-encontradas}
   \resizebox{\textwidth}{!}{\begin{tabular}{|l|l|l|l|}
     \hline
@@ -81,16 +90,7 @@ Diversas necessidades foram encontradas, sendo agrupadas, estudadas e propostas 
     O processo de montagem da banca de TCC é manual.                                    & 6      & E-mail, conversas & Permitir montagem de bancas pelo sistema                     \\ \hline
     Fechar as notas finais é um processo exaustivo e com curto prazo.                   & 3      & Papel             & Automatizar o cálculo das notas finais                       \\ \hline
   \end{tabular}}
-\end{table}
-
-\subsection{Alternativas e Concorrência}
-Também foram estudados alguns concorrentes do produto, de maneira a compreender se eles não seriam soluções para as necessidades levantadas:
-
-\begin{itemize}
-    \item Tidia-AE: entregas pontuais, com acesso apenas aos integrantes do grupo e aos coordenadores da disciplina. Os orientadores ficam de fora das entregas principais, cabendo aos alunos realizarem essa comunicação de maneira extra-oficial.
-    \item Moodle: plataforma aberta conhecida no mercado para gerenciamento de disciplinas em geral. Serve para construir grupos e até incluir orientadores, porém não é uma alternativa simples e não possui funcionalidades de busca avançada.
-    \item Site PCS (Wordpress): apenas resultado final, de maneira pública, sem integração dos envolvidos no projeto.
-\end{itemize}
+\end{sidewaystable}
 
 \subsection{Perspectiva do Produto}
 O produto tem como missão automatizar o processo já existente para a disciplina, pois muitas funcionalidades propostas são realizadas de maneira manual ou simplificada, o que demanda muito tempo e esforço dos coordenadores e orientadores, tornando o processo frágil. Além disso, depende da iniciativa de todos os envolvidos, pois todo o processo de comunicação orientador-aluno é feito de maneira isolada do processo coordenador-aluno e coordenador-orientador.
@@ -117,6 +117,6 @@ Além dos requisitos funcionais, alguns requisitos não funcionais importantes f
 \begin{itemize}
     \item Segurança: os acessos às monografias em andamento devem ser apenas aos envolvidos diretos do trabalho. Além disso, as empresas só podem acessar o resultado final não revisado, para fins de avaliação. Foco especial nos requisitos de Confidencialidade e Integridade.
     \item Confiabilidade: o sistema deve suportar situações de falha e lidar bem com as informações, garantindo sua proteção. No caso, foco especial em Recuperabilidade.
-    \item Usabilidade: o sistema deve ser bem intuitivo e de aprendizagem fácil, pelo tempo curto dos envolvidos na feira e pela mobilidade envolvida (avaliações pelo celular, por exemplo). Foco especial na Operacionalidade, Estética/Interface e Proteção contra Erros do Usuário.
-    \item Manutenibilidade: o sistema deve ser bem intuitivo de realizar alterações, instalações e afins, dado que alunos podem tocar sua manutenção futuramente. Foco especial na Modificabilidade.
+    \item Usabilidade: o sistema deve ser intuitivo e de aprendizagem fácil, pelo tempo curto dos envolvidos na feira e pela mobilidade envolvida (avaliações pelo celular, por exemplo). Foco especial na Operacionalidade, Estética/Interface e Proteção contra Erros do Usuário.
+    \item Manutenibilidade: o sistema deve permitir realizar alterações, instalações e afins, dado que alunos podem tocar sua manutenção futuramente. Foco especial na Modificabilidade.
 \end{itemize}

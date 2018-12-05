@@ -2,7 +2,7 @@
 Neste capítulo, serão abordadas as etapas de teste e validação do sistema, as reuniões ocorridas e os testes realizados (automatizados ou não).
 
 \section{Validações}
-Para validar os Casos de Uso do sistema, algumas reuniões com os \textit{stakeholders} ocorreram durante o processo de desenvolvimento, com o objetivo de acompanhar se o produto estava de acordo com as expectativas levantadas no início do projeto. Nesta seção, será detalhada as reuniões que ocorreram após o fim de cada iteração e as alterações levantadas.
+Para validar os Casos de Uso do sistema, algumas reuniões com os \textit{stakeholders} ocorreram durante o processo de desenvolvimento, com o objetivo de acompanhar se o produto estava de acordo com as expectativas levantadas no início do projeto. Nesta seção, serão detalhadas as reuniões que ocorreram após o fim de cada iteração e as alterações levantadas.
 
 \subsection{Reunião de 28/09}
 A reunião foi marcada por ser a primeira validação dos \textit{stakeholders}, logo, o sistema como um todo foi uma completa novidade. Para a reunião, foi construído um roteiro de testes a ser executado em conjunto com os coordenadores da disciplina (Prof. Dr. João Batista e Prof. Dr. Paulo Cugnasca):
@@ -116,9 +116,9 @@ Como resultado dessa reunião, a aceitação se manteve positiva, sem grandes re
 Além do processo de validação, seguindo a filosofia apresentada no capítulo \ref{chap:aspectos-conceituais}, diversos testes foram escritos para reforçar a prática de verificação do sistema, para saber se ele está sendo desenvolvido corretamente. Nesta seção, serão discutidos os cenários de teste escritos e as ferramentas e dificuldades encontradas para escrevê-los.
 
 \subsection{Cenários de Teste}
-Dado que o conjunto de testes possíveis é infinito, foram selecionados alguns testes a serem escritos. Para o sistema, dois tipos de teste foram adotados: unidade e interface. 
+Dado que o conjunto de testes possíveis é infinito, foram selecionados alguns testes a serem escritos. Para o sistema, dois tipos de teste foram adotados: Unidade e Interface. 
 
-Nos testes unitários, foram testados apenas os métodos escritos com função diferenciada e primordial para o sistema, como por exemplo os métodos de classe dos modelos. Já os testes de interface cobrem, por meio de ferramentas automatizadas, execuções de tela do sistema, verificando o fluxo de neǵocio de cada aplicação.
+Nos testes de unidade, foram testados apenas os métodos escritos com função diferenciada e primordial para o sistema, como por exemplo os métodos de classe dos modelos. Já os testes de interface cobrem, por meio de ferramentas automatizadas, execuções de tela do sistema, verificando o fluxo de neǵocio de cada aplicação.
 
 Cada aplicação escrita foi testada por uma outra aplicação interna a ela, específica pra teste, contendo os seguintes testes:
 
@@ -131,11 +131,11 @@ Cada aplicação escrita foi testada por uma outra aplicação interna a ela, es
 Todas as telas possuem testes escritos, bem como todos os formulários. Apenas os modelos de alocação, avaliação, usuários e grupos de trabalho não têm testes, dado que não possuem métodos nos modelos. No total, 39 testes foram elaborados para o sistema.
 
 \subsection{Ferramentas de Teste}
-O Django possui uma biblioteca extensa para realizar testes no sistema. Para testes unitários, usar a parte nativa resolve o problema. Já para escrever testes de interface, a complexidade foi maior, dado que a aplicação precisaria rodar em um servidor para testes, além de uma ferramenta específica para testes automatizados de tela.
+O Django possui uma biblioteca extensa para realizar testes no sistema. Para testes de unidade, usar a parte nativa resolve o problema. Já para escrever testes de interface, a complexidade foi maior, dado que a aplicação precisaria rodar em um servidor para testes, além de uma ferramenta específica para testes automatizados de tela.
 
-Existem diversas ferramentas específicas para rodar testes automatizados que envolvam interface do sistema. Neste projeto, a ferramenta escolhida foi o \textit{Selenium}\cite{selenium2018}, amplamente utilizada nos mais diversos \text{frameworks}. Para o Django, a ferramenta específica usada foi o \textit{Selenium WebDriver}, totalmente integrável com as ferramentas de teste. Em contrapartida, soluções desse aspecto necessitam que a aplicação esteje rodando em um servidor, o que não é o caso nos demais testes.
+Existem diversas ferramentas específicas para rodar testes automatizados que envolvam interface do sistema. Neste projeto, a ferramenta escolhida foi o \citeauthoronline{selenium2018}, amplamente utilizada nos mais diversos \text{frameworks}. Para o Django, a ferramenta específica usada foi o \textit{Selenium WebDriver}, totalmente integrável com as ferramentas de teste. Em contrapartida, soluções desse aspecto necessitam que a aplicação esteje rodando em um servidor, o que não é o caso nos demais testes.
 
-Para resolver o problema de ter um servidor dedicado para testes,o Django oferece uma solução específica chamada \textit{StaticLiveServerTestCase}\cite{staticfiles2018}: uma classe do Django que sobe um servidor exclusivo para os testes escritos na classe que herdá-la. Esta solução atende a necessidade do \textit{Selenium} de ter um servidor dedicado para rodar os testes automatizados.
+Para resolver o problema de ter um servidor dedicado para testes,o Django oferece uma solução específica chamada \textit{StaticLiveServerTestCase} \cite{staticfiles2018}: uma classe do Django que sobe um servidor exclusivo para os testes escritos na classe que herdá-la. Esta solução atende a necessidade do \textit{Selenium} de ter um servidor dedicado para rodar os testes automatizados.
 
 
 
