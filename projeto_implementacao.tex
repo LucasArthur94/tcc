@@ -87,7 +87,7 @@ Há também os casos de uso não implementados do sistema, levantados como persp
     \item Cadastrar projetos avulsos: coordenadores cadastram monografias revisadas, banners, press-releases, posters e links do site de trabalhos anteriores para a base de dados históricos de TCC.
     \item Propor tema de trabalho: alunos e Orientadores propõem temas em busca de orientadores ou alunos dispostos a realizarem.
     \item Buscar projetos anteriores: usuários externos ao sistema procuram monografias anteriores, de acordo com o nome, ano, turma (semestral ou quadrimestral) e palavras-chave.
-    \item Buscar temas propostos: alunos e orientadores procuram temas propostos por outros alunos e orientadores, de acordo com o nome, palavras-chave e grupos de pesquisa do departamento, podendo se inscrever nas vagas para esses temas (se houverem).
+    \item Buscar temas propostos: alunos e orientadores procuram temas propostos por outros alunos e orientadores, de acordo com o nome, palavras-chave e grupos de pesquisa do departamento, podendo se inscrever nas vagas para esses temas (se houver).
 \end{itemize}
 
 \begin{figure}[H]
@@ -133,7 +133,7 @@ A vantagem do padrão está no fluxo de dados que existe entre os grupos, além 
 
 Já para a hospedagem foi usado como apoio o Heroku, um serviço de plataforma (\textit{Platform as a Service} - \textbf{PaaS}) de computação em nuvem conhecida no mercado, com a possibilidade de subir aplicações nas linguagens Ruby, Node.js, Java, Python, Clojure, Scala, Go e PHP. O Heroku foi escolhido pela facilidade em subir uma aplicação gratuitamente, o que possibilita testar e validar ideias básicas. A estrutura básica do Heroku funciona com o uso de \textit{dynos}, que são pequenas máquinas tanto para hospedar sua aplicação principal quanto outras auxiliares para serviços externos e/ou paralelos. Resumidamente, ele possui um plano básico gratuito que possibilita testar aplicações de maneira fácil e sem dificuldades de expansão e, se desejar, há máquinas de performance superior, cobradas com base no conceito de \textit{dynos}-hora.
 
-Vale lembrar que um dos requisitos definidos no capitulo \ref{chap:especificacao-requisitos-sistema} é a hospedagem da aplicação em um serviço de nuvem da USP. Por motivos de tempo e limitações de recursos (dado que não havia, à disposição, mais do que uma máquina, dado os ambientes de validação citados no capítulo \ref{chap:processo-desenvolvimento}), foram usados três ambientes do Heroku, com os seguintes domínios:
+Vale lembrar que um dos requisitos definidos no capitulo \ref{chap:especificacao-requisitos-sistema} é a hospedagem da aplicação em um serviço de nuvem da USP. Por motivos de tempo e limitações de recursos (dado que não havia, a disposição, mais do que uma máquina, dado os ambientes de validação citados no capítulo \ref{chap:processo-desenvolvimento}), foram usados três ambientes do Heroku, com os seguintes domínios:
 
 \begin{itemize}
     \item Desenvolvimento: \href{https://tccapp-next-release.herokuapp.com}{https://tccapp-next-release.herokuapp.com}
@@ -197,6 +197,6 @@ Para a navegação de telas, foram construídos diagramas de navegação simples
     \label{fig:telas-coordenador}
 \end{figure}
 
-O código presente está em um repositório público na plataforma de controle de versão GitHub, onde também se encontram detalhes mais técnicos sobre como realizar manutenções no sistema e como rodar na máquina do desenvolvedor: \href{https://github.com/LucasArthur94/tccapp}{https://github.com/LucasArthur94/tccapp}.
+O código presente está em um repositório público na plataforma de controle de versão GitHub, onde também se encontram detalhes mais técnicos sobre como realizar manutenções no sistema e como rodar na máquina do desenvolvedor, tudo explicado no repositório: \href{https://github.com/LucasArthur94/tccapp}{https://github.com/LucasArthur94/tccapp}.
 
 Há também, no apêndice \ref{chap:user-manual-appendix}, um pequeno manual de instruções de uso do sistema, com algumas capturas de tela para ilustrar o fluxo de navegação para os diversos atores.
